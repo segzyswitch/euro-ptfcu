@@ -3,15 +3,15 @@ class Controller
 {
   /* online server */
     // private $db_server = 'localhost';
-    // private $db_username = 'partner1_main';
-    // private $db_password = 'Primestar1$';
-    // private $db_name = 'partner1_main';
+    private $db_username = 'partner1_main';
+    private $db_password = 'Primestar1$';
+    private $db_name = 'partner1_euros';
 
   /* local server */
   private $db_server = 'localhost';
-  private $db_username = 'root';
-  private $db_password = '';
-  private $db_name = 'euro_ptfcu';
+  // private $db_username = 'root';
+  // private $db_password = '';
+  // private $db_name = 'euro_ptfcu';
   // DB Connection
   public $conn;
 
