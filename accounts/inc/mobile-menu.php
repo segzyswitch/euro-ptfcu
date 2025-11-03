@@ -10,11 +10,6 @@
 		<span>Invest</span>
 	</a>
 	<a href="./invest-logs" class="mobile-nav-item">
-		<i class="bi bi-briefcase position-relative">
-			<?php if( $Controller->runningTrades()['count'] > 0 ) { ?>
-			<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"><?php echo $Controller->runningTrades()['count'] ?></span>
-			<?php } ?>
-		</i>
 		<span>Trades</span>
 	</a>
 	<a href="./transactions" class="mobile-nav-item">

@@ -296,7 +296,7 @@
 									</div>
 									<div class="tp-service-item-content">
 										<h4 class="tp-service-item-title"><a>Get Reichsburg Online Banking Loan</a></h4>
-										<p>Secure a consumer loan of up to $10,000 online. Apply from your mobile or computer, on
+										<p>Secure a consumer loan of up to €10,000 online. Apply from your mobile or computer, on
 											the first day.</p>
 									</div>
 									<div class="tp-service-item-thumb">

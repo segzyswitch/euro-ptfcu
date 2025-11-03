@@ -81,8 +81,8 @@ require '../config/session.php';
 														<div class="input-group mb-0">
 															<select id="send_from" name="send_from" class="site-nice-select">
 																<option value="">Select from wallet</option>
-																<option value="wallet_bal">Main Wallet ($<?php echo number_format($user_info['wallet_bal'],2) ?>)</option>
-																<option value="trading_bal">Profit Wallet ($<?php echo number_format($user_info['trading_bal'],2) ?>)</option>
+																<option value="wallet_bal">Main Wallet (€<?php echo number_format($user_info['wallet_bal'],2) ?>)</option>
+																<option value="trading_bal">Profit Wallet (€<?php echo number_format($user_info['trading_bal'],2) ?>)</option>
 															</select>
 														</div>
 													</div>
@@ -100,8 +100,8 @@ require '../config/session.php';
 														<div class="input-group">
 															<select name="send_to" id="send_to" class="site-nice-select">
 																<option value="">Select to wallet</option>
-																<option value="wallet_bal">Main Wallet ($<?php echo number_format($user_info['wallet_bal'],2) ?>)</option>
-																<option value="trading_bal">Profit Wallet ($<?php echo number_format($user_info['trading_bal'],2) ?>)</option>
+																<option value="wallet_bal">Main Wallet (€<?php echo number_format($user_info['wallet_bal'],2) ?>)</option>
+																<option value="trading_bal">Profit Wallet (€<?php echo number_format($user_info['trading_bal'],2) ?>)</option>
 															</select>
 														</div>
 
@@ -127,7 +127,7 @@ require '../config/session.php';
 															</tr>
 															<tr>
 																<td><strong>Charge</strong></td>
-																<td class="">$0</td>
+																<td class="">€0</td>
 															</tr>
 															<tr>
 																<td><strong>Total</strong></td>

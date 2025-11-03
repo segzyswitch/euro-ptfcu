@@ -130,7 +130,7 @@
 										<p><strong>Product Features:</strong></p>
 
 
-										<p> Minimum initial deposit of $ 500,000.00 and subsequent investment in multiples of $ 100,000.00
+										<p> Minimum initial deposit of € 500,000.00 and subsequent investment in multiples of € 100,000.00
 											Subsequent investment could be made depending on the investor’s timing preference.</p>
 										<p> Initial duration of 3 years with option of realizing the investment (with prior notice of not
 											less than 3 months) Part draw down on investment prior to expiration of the initial duration is

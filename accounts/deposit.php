@@ -80,11 +80,11 @@ require '../config/session.php';
 								<div class="mb-4">
 									<label for="depositAmount" class="form-label">Amount (USD)</label>
 									<div class="input-group">
-										<span class="input-group-text">$</span>
+										<span class="input-group-text">€</span>
 										<input type="number" name="amount" class="form-control" id="depositAmount" placeholder="0.00"
 											min="100" required>
 									</div>
-									<small class="text-muted">Minimum deposit: $50.00</small>
+									<small class="text-muted">Minimum deposit: €50.00</small>
 								</div>
 								<div class="mb-4">
 									<label class="form-label">Upload reciept</label>
@@ -97,15 +97,15 @@ require '../config/session.php';
 									<label class="form-label">Quick Amounts</label>
 									<div class="d-flex gap-2 flex-wrap">
 										<button type="button" class="btn btn-outline-secondary quick-amount"
-											data-amount="1000">$1,000</button>
+											data-amount="1000">€1,000</button>
 										<button type="button" class="btn btn-outline-secondary quick-amount"
-											data-amount="5000">$5,000</button>
+											data-amount="5000">€5,000</button>
 										<button type="button" class="btn btn-outline-secondary quick-amount"
-											data-amount="10000">$10,000</button>
+											data-amount="10000">€10,000</button>
 										<button type="button" class="btn btn-outline-secondary quick-amount"
-											data-amount="25000">$25,000</button>
+											data-amount="25000">€25,000</button>
 										<button type="button" class="btn btn-outline-secondary quick-amount"
-											data-amount="50000">$50,000</button>
+											data-amount="50000">€50,000</button>
 									</div>
 								</div> -->
 
@@ -136,11 +136,11 @@ require '../config/session.php';
 							</div>
 							<div class="mb-3">
 								<small class="text-muted d-block mb-1">Minimum Deposit</small>
-								<p class="mb-0">$50.00</p>
+								<p class="mb-0">€50.00</p>
 							</div>
 							<div>
 								<small class="text-muted d-block mb-1">Daily Limit</small>
-								<p class="mb-0">$100,000.00</p>
+								<p class="mb-0">€100,000.00</p>
 							</div>
 						</div>
 					</div>

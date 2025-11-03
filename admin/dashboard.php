@@ -118,7 +118,7 @@
 										<div class="card card--hover linear-card bg--linear-primary text-center h-100">
 											<div class="card-body p-3">
 												<h5 class="text-white opacity-75 fw-normal">Total Investments</h5>
-												<h4 class="fw-bold mt-1 text-white fs-18">$22620</h4>
+												<h4 class="fw-bold mt-1 text-white fs-18">€22620</h4>
 												<!-- <a href="investments" class="badge badge--outline"><i class="las la-arrow-circle-right fs-17"></i> View all</a> -->
 											</div>
 										</div>
@@ -132,7 +132,7 @@
 												<h5 class="text--light fs-14">Running</h5>
 											</div>
 											<div class="flex-shrink-0 text-end">
-												<h5 class="text--dark fs-14 fw-bold">$12920</h5>
+												<h5 class="text--dark fs-14 fw-bold">€12920</h5>
 											</div>
 										</div>
 									</li>
@@ -143,7 +143,7 @@
 												<h5 class="text--light fs-14">Total Profits</h5>
 											</div>
 											<div class="flex-shrink-0 text-end">
-												<h5 class="text--dark fs-14 fw-bold">$22797.32</h5>
+												<h5 class="text--dark fs-14 fw-bold">€22797.32</h5>
 											</div>
 										</div>
 									</li>
@@ -154,7 +154,7 @@
 												<h5 class="text--light fs-14">Completed</h5>
 											</div>
 											<div class="flex-shrink-0 text-end">
-												<h5 class="text--dark fs-14 fw-bold">$0</h5>
+												<h5 class="text--dark fs-14 fw-bold">€0</h5>
 											</div>
 										</div>
 									</li>
@@ -171,19 +171,19 @@
 							<div class="card-body">
 								<div class="text-center bg--success-light mb-3 p-4">
 									<p class="text--success fs-14">Total Deposits</p>
-									<h5 class="fw-bold mt-2 text--dark fs-17">$165975</h5>
+									<h5 class="fw-bold mt-2 text--dark fs-17">€165975</h5>
 								</div>
 								<div class="d-flex flex-row justify-content-between flex-wrap gap-2">
 									<div class="d-flex flex-column align-items-center flex-grow-1 bg--info-light">
 										<div class="text-center p-3 w-100">
 											<p class="text--info fs-12">Pending Deposits</p>
-											<h5 class="fw-bold mt-2 text--dark">$39375</h5>
+											<h5 class="fw-bold mt-2 text--dark">€39375</h5>
 										</div>
 									</div>
 									<div class="d-flex flex-column align-items-center flex-grow-1 bg--primary-light">
 										<div class="text-center p-3 w-100">
 											<p class="text--primary fs-12">Completed deposits</p>
-											<h5 class="fw-bold mt-2 text--dark">$1000</h5>
+											<h5 class="fw-bold mt-2 text--dark">€1000</h5>
 										</div>
 									</div>
 								</div>
@@ -199,19 +199,19 @@
 							<div class="card-body">
 								<div class="text-center bg--danger-light mb-3 p-4">
 									<p class="text--danger fs-14">Total Withdraw</p>
-									<h5 class="fw-bold mt-2 text--dark fs-17">$24210</h5>
+									<h5 class="fw-bold mt-2 text--dark fs-17">€24210</h5>
 								</div>
 								<div class="d-flex flex-row justify-content-between flex-wrap gap-2">
 									<div class="d-flex flex-column align-items-center flex-grow-1 bg--light">
 										<div class="text-center p-3 w-100">
 											<p class="text--light fs-12">Pending Withdraw</p>
-											<h5 class="fw-bold mt-2 text--dark">$6505</h5>
+											<h5 class="fw-bold mt-2 text--dark">€6505</h5>
 										</div>
 									</div>
 									<div class="d-flex flex-column align-items-center flex-grow-1 bg--pink-light">
 										<div class="text-center p-3 w-100">
 											<p class="text--pink fs-12">Rejected Withdraw</p>
-											<h5 class="fw-bold mt-2 text--dark">$0</h5>
+											<h5 class="fw-bold mt-2 text--dark">€0</h5>
 										</div>
 									</div>
 								</div>

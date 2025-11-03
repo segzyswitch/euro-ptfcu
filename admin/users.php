@@ -63,7 +63,7 @@
 									<td data-label="Email">
 										<span><?php echo $value['email'] ?></span>
 									</td>
-									<td data-label="Wallet Balance">$<?php echo number_format($value['wallet_bal']) ?>.00</td>
+									<td data-label="Wallet Balance">€<?php echo number_format($value['wallet_bal']) ?>.00</td>
 									<td data-label="Status">
 										<?php
 											if($value['status']=='confirmed') echo '<span class="badge badge--success">Confirmed</span>';

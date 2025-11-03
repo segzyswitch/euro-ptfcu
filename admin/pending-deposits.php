@@ -70,7 +70,7 @@ require('config/session.php');
                     <?php echo $user_info['fname'].' '.$user_info['lname'] ?>
                   </td>
                   <td data-label="Amount">
-                    <?php echo '$'.number_format($value['amount']).'.00' ?>
+                    <?php echo '€'.number_format($value['amount']).'.00' ?>
                   </td>
                   <td data-label="Source">
                     <?php echo $value['source'] ?>

@@ -67,7 +67,7 @@ class Controller
   {
     $user_info = $this->User();
     $balanceSum = $user_info['savings_bal'] + $user_info['current_bal'];
-    return '$' . number_format($balanceSum, 2);
+    return '€' . number_format($balanceSum, 2);
   }
 
   // Linked Accounts
@@ -196,7 +196,7 @@ class Controller
       }
       return [
         'count' => count($data),
-        'sum' => '$' . number_format($total, 2)
+        'sum' => '€' . number_format($total, 2)
       ];
     } catch (PDOException $e) {
       return $e->getMessage();
@@ -219,7 +219,7 @@ class Controller
       }
       return [
         'count' => count($data),
-        'sum' => '$' . number_format($total, 2)
+        'sum' => '€' . number_format($total, 2)
       ];
     } catch (PDOException $e) {
       return $e->getMessage();
@@ -242,7 +242,7 @@ class Controller
       }
       return [
         'count' => count($data),
-        'sum' => '$' . number_format($total, 2)
+        'sum' => '€' . number_format($total, 2)
       ];
     } catch (PDOException $e) {
       return $e->getMessage();
@@ -312,7 +312,7 @@ class Controller
       }
       return [
         'count' => count($data),
-        'sum' => '$' . number_format($total, 2)
+        'sum' => '€' . number_format($total, 2)
       ];
     } catch (PDOException $e) {
       return $e->getMessage();
@@ -334,7 +334,7 @@ class Controller
       }
       return [
         'count' => count($data),
-        'sum' => '$' . number_format($total, 2)
+        'sum' => '€' . number_format($total, 2)
       ];
     } catch (PDOException $e) {
       return $e->getMessage();
@@ -372,7 +372,7 @@ class Controller
         $total += $value['profit'];
       }
       $returns = $total + $this->totalInvested();
-      return '$' . number_format($returns, 2);
+      return '€' . number_format($returns, 2);
     } catch (PDOException $e) {
       return $e->getMessage();
     }
@@ -391,7 +391,7 @@ class Controller
       foreach ($data as $key => $value) {
         $total += $value['profit'];
       }
-      return '$' . number_format($total, 2);
+      return '€' . number_format($total, 2);
     } catch (PDOException $e) {
       return $e->getMessage();
     }

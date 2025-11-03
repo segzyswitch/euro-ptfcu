@@ -69,7 +69,7 @@
                   <td data-label="Amount">
                     <?php
                     if($value['type']=='deposit') echo '<span class="text--success">$'.$value['amount'].'.00</span>';
-                    else echo '<span class="text--danger">$'.$value['amount'].'.00</span>';
+                    else echo '<span class="text--danger">€'.$value['amount'].'.00</span>';
                     ?>
                   </td>
                   <td data-label="Type">

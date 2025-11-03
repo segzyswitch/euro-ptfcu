@@ -67,7 +67,7 @@
                     <span><?php echo $value['name']; ?></span>
                   </td>
                   <td data-label="Investment Limit">
-                    <?php echo '$'.number_format($value['min_limit']).' - $'.number_format($value['max_limit']); ?>
+                    <?php echo '€'.number_format($value['min_limit']).' - €'.number_format($value['max_limit']); ?>
                   </td>
                   <td data-label="Interest">
                     <?php echo $value['interest'].'%'; ?>

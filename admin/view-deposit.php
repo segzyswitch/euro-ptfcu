@@ -51,7 +51,7 @@
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center">
                     Rate
-                    <span class="fw-bold">$1 = 1 USD</span>
+                    <span class="fw-bold">€1 = 1 USD</span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center">
                     Trx
@@ -59,15 +59,15 @@
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center">
                     Deposit Amount
-                    <span class="fw-bold">$200</span>
+                    <span class="fw-bold">€200</span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center">
                     Charge
-                    <span class="fw-bold">$6</span>
+                    <span class="fw-bold">€6</span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center">
                     Final Amount
-                    <span class="fw-bold">$194</span>
+                    <span class="fw-bold">€194</span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center">
                     Status

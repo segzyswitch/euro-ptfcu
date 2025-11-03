@@ -126,16 +126,16 @@
 											check writing on money market accounts. You may have up to six debit transactions a month at no
 											fee, with only three by check or debit card as limited by regulation.</p>
 
-										<p>The Money Market Account earns interest when your daily collected balance is $1000 or more.
+										<p>The Money Market Account earns interest when your daily collected balance is €1000 or more.
 											Interest is compounded and paid monthly into your account.</p>
 
-										<p>There is a monthly fee of $5 for the Money Market Account. You can avoid the fee with a $1000
-											minimum daily balance, or a $2000 average monthly balance.</p>
+										<p>There is a monthly fee of €5 for the Money Market Account. You can avoid the fee with a €1000
+											minimum daily balance, or a €2000 average monthly balance.</p>
 
 										<p>Individuals and businesses are eligible for Money Market Accounts. Overdraft Privilege available
 											after qualifying period.</p>
 
-										<p>Open this account with a minimum opening deposit of $1000 at your nearest Reichsburg Banks location.
+										<p>Open this account with a minimum opening deposit of €1000 at your nearest Reichsburg Banks location.
 										</p>
 
 
@@ -145,7 +145,7 @@
 										<p>There is no minimum balance requirement. You'll receive monthly statements with images of your
 											cancelled checks.</p>
 
-										<p>The monthly fee is $10. Your business may have up to 100 checks per month with no check fee. If
+										<p>The monthly fee is €10. Your business may have up to 100 checks per month with no check fee. If
 											more than 100 checks, the fee is 20 cents per check.</p>
 										<p>Your account may have up to 300 deposited items per month at no fee. If more than 300 items, the
 											fee is 5 cents per item.</p>

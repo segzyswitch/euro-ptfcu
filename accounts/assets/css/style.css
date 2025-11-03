@@ -95,6 +95,7 @@ body {
 }
 
 .sidebar-nav { flex-direction: column; }
+.sidebar-nav .nav-item { width: 100%; }
 .sidebar-nav .nav-link {
   display: flex;
   align-items: center;
@@ -103,8 +104,20 @@ body {
   color: var(--secondary-color);
   border-radius: 0.5rem;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: background-color 0.2s, color 0.2s;
   margin: 5px 0;
+}
+.sidebar-nav .flex-column .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 7.5px .8rem;
+  border-radius: 0.5rem;
+  margin: 3px 0;
+  font-size: 14px;
+}
+.nav-link[aria-expanded="true"] {
+  background-color: var(--surface-hover);
+  color: var(--primary-color);
 }
 .sidebar-nav .nav-link:hover {
   background-color: var(--surface-hover);

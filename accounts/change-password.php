@@ -156,11 +156,11 @@
 						</div>
 						<div class="wallet-info">
 							<div class="wallet-id"><i icon-name="wallet"></i>Main Wallet</div>
-							<div class="balance">$5</div>
+							<div class="balance">€5</div>
 						</div>
 						<div class="wallet-info">
 							<div class="wallet-id"><i icon-name="landmark"></i>Profit Wallet</div>
-							<div class="balance">$3</div>
+							<div class="balance">€3</div>
 						</div>
 					</div>
 					<div class="actions">

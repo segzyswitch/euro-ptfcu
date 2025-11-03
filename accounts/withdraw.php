@@ -53,18 +53,18 @@ require '../config/session.php';
 									<label for="withdrawAccount" class="form-label">From Account</label>
 									<select name="from_wallet" class="form-select" id="withdrawAccount" required>
 										<option value="">Select from wallet</option>
-										<option value="wallet_bal">Main Wallet ($<?php echo number_format($user_info['wallet_bal'],2) ?>)</option>
-										<option value="trading_bal">Profit Wallet ($<?php echo number_format($user_info['trading_bal'],2) ?>)</option>
+										<option value="wallet_bal">Main Wallet (€<?php echo number_format($user_info['wallet_bal'],2) ?>)</option>
+										<option value="trading_bal">Profit Wallet (€<?php echo number_format($user_info['trading_bal'],2) ?>)</option>
 									</select>
 								</div>
 								<div class="mb-4">
 									<label for="withdrawAmount" class="form-label">Amount (USD)</label>
 									<div class="input-group">
-										<span class="input-group-text">$</span>
+										<span class="input-group-text">€</span>
 										<input type="number" name="amount" class="form-control" id="withdrawAmount" placeholder="0.00"
 											min="100" step="0.01" required />
 									</div>
-									<small class="text-muted">Minimum withdrawal: $100.00</small>
+									<small class="text-muted">Minimum withdrawal: €100.00</small>
 								</div>
 								<div class="mb-4">
 									<label for="withdrawMethod" class="form-label">Recieving wallet</label>
@@ -125,15 +125,15 @@ require '../config/session.php';
 							</div>
 							<div class="mb-3">
 								<small class="text-muted d-block mb-1">Transaction Fee</small>
-								<p class="mb-0">$0 - $25 (varies by method)</p>
+								<p class="mb-0">€0 - €25 (varies by method)</p>
 							</div>
 							<div class="mb-3">
 								<small class="text-muted d-block mb-1">Minimum Withdrawal</small>
-								<p class="mb-0">$100.00</p>
+								<p class="mb-0">€100.00</p>
 							</div>
 							<div>
 								<small class="text-muted d-block mb-1">Daily Limit</small>
-								<p class="mb-0">$50,000.00</p>
+								<p class="mb-0">€50,000.00</p>
 							</div>
 						</div>
 					</div>
@@ -162,7 +162,7 @@ require '../config/session.php';
 								<div class="list-group-item">
 									<div class="d-flex justify-content-between align-items-center">
 										<div>
-											<div class="fw-medium">$<?php echo number_format($value['amount'], ) ?></div>
+											<div class="fw-medium">€<?php echo number_format($value['amount'], ) ?></div>
 											<small class="text-muted"><?php echo date('M d, Y', strtotime($value['createdat'])) ?></small>
 										</div>
 										<?php
