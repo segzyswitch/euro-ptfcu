@@ -56,7 +56,7 @@ $(document).ready(function() {
 		    if ( data.search('success') !== -1 ) {
 		    	$("#loginForm input").val('');
 					notifySuccess("Taking you to your dashboard");
-		    	window.location.href = 'accounts/';
+		    	window.location.href = 'accounts/index';
 		    }else {
           $('#loginForm .submit-btn').prop('disabled', false);
 					notifyWarning(data);

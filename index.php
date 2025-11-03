@@ -66,7 +66,7 @@
 											</div>
 											<div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
 												<div class="tp-hero-btn mr-30">
-													<a class="tp-btn" href="accounts/">Sign in</a>
+													<a class="tp-btn" href="accounts/index">Sign in</a>
 												</div>
 											</div>
 										</div>
@@ -101,7 +101,7 @@
 											</div>
 											<div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
 												<div class="tp-hero-btn mr-30">
-													<a class="tp-btn" href="accounts/">Enter Account</a>
+													<a class="tp-btn" href="accounts/index">Enter Account</a>
 												</div>
 											</div>
 										</div>
@@ -135,7 +135,7 @@
 											</div>
 											<div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
 												<div class="tp-hero-btn mr-30">
-													<a class="tp-btn" href="accounts/">Online Banking <span></span></a>
+													<a class="tp-btn" href="accounts/index">Online Banking <span></span></a>
 												</div>
 											</div>
 										</div>

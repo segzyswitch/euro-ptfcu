@@ -18,9 +18,9 @@
     </a>
     <div id="transferMenu" class="collapse" data-bs-parent="#sidebarAccordion">
       <ul class="nav flex-column ms-3">
-        <li><a href="./deposit" class="nav-link <?php echo $page=='deposit'?'active':''; ?>">Local transfer</a></li>
-        <li><a href="./withdraw" class="nav-link <?php echo $page=='withdraw'?'active':''; ?>">Wire transfer</a></li>
-        <li><a href="./withdraw" class="nav-link <?php echo $page=='withdraw'?'active':''; ?>">Transfer to self</a></li>
+        <li><a href="./local-transfer" class="nav-link <?php echo $page=='deposit'?'active':''; ?>">Local transfer</a></li>
+        <li><a href="./wire-transfer" class="nav-link <?php echo $page=='withdraw'?'active':''; ?>">Wire transfer</a></li>
+        <li><a href="./self-transfer" class="nav-link <?php echo $page=='withdraw'?'active':''; ?>">Transfer to self</a></li>
       </ul>
     </div>
   </li>
@@ -36,7 +36,7 @@
     <div id="depositMenu" class="collapse" data-bs-parent="#sidebarAccordion">
       <ul class="nav flex-column ms-3">
         <li><a href="./deposit" class="nav-link <?php echo $page=='deposit'?'active':''; ?>">Crypto deposit</a></li>
-        <li><a href="./deposit" class="nav-link <?php echo $page=='deposit'?'active':''; ?>">Check deposit</a></li>
+        <li><a href="./check-deposit" class="nav-link <?php echo $page=='deposit'?'active':''; ?>">Check deposit</a></li>
       </ul>
     </div>
   </li>
@@ -49,7 +49,7 @@
     </a>
   </li>
 
-  <!-- Transactions -->
+  <!-- Cards -->
   <li class="nav-item">
     <a href="./cards" class="nav-link <?php echo $page=='dashboard'?'active':''; ?>">
       <i class="bi bi-credit-card"></i>

@@ -8,7 +8,7 @@ require '../config/session.php';
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Deposit - Reichsburg Banks</title>
+	<title>Crypto Deposit - Reichsburg Banks</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 	<link rel="stylesheet" href="assets/css/style.css">
@@ -29,28 +29,28 @@ require '../config/session.php';
 				<div class="col-lg-8">
 					<!-- Deposit Methods -->
 					<div class="card mb-4">
-						<div class="card-header">
-							<h5 class="mb-0">Choose Deposit Method</h5>
+						<div class="card-header pt-3">
+							<h5><i class="bi bi-wallet2"></i> Deposit funds</h5>
 						</div>
 						<div class="card-body">
 							<div class="row g-3">
 								<div class="col-md-6">
 									<div class="deposit-method">
-										<input type="radio" class="btn-check" name="depositMethod" id="crypto" checked>
-										<label class="btn btn-outline-primary w-100 py-3" for="crypto">
+										<input type="radio" class="btn-check" name="depositMethod" id="bankTransfer" checked>
+										<label class="btn btn-outline-primary w-100 py-3" for="bankTransfer">
 											<i class="bi bi-currency-bitcoin fs-3 d-block mb-2"></i>
-											<span class="fw-medium">Cryptocurrency</span>
-											<small class="d-block text-muted">30-60 minutes</small>
+											<span class="fw-medium">Crypto deposit</span>
+											<small class="d-block text-muted">Fast and secure</small>
 										</label>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="deposit-method">
-										<input type="radio" class="btn-check" name="depositMethod" id="bankTransfer">
-										<label class="btn btn-outline-primary w-100 py-3" for="bankTransfer">
-											<i class="bi bi-bank fs-3 d-block mb-2"></i>
-											<span class="fw-medium">Bank Transfer</span>
-											<small class="d-block text-muted">1-3 business days</small>
+										<input type="radio" class="btn-check" name="depositMethod" id="crypto">
+										<label class="btn btn-outline-primary w-100 py-3" for="crypto">
+											<i class="bi bi-upc-scan fs-3 d-block mb-2"></i>
+											<span class="fw-medium">Check deposit</span>
+											<small class="d-block text-muted">Less than 24 hours</small>
 										</label>
 									</div>
 								</div>
@@ -60,54 +60,55 @@ require '../config/session.php';
 
 					<!-- Deposit Form -->
 					<div class="card mb-4">
-						<div class="card-header pt-2">
-							<h5 class="mb-0">Deposit Details</h5>
+						<div class="card-header pt-3">
+							<h6>Crypto deposit</h6>
 						</div>
 						<div class="card-body">
-							<form id="depositForm" method="POST" action="#">
+							<form id="depositForm" class="mb-2" method="POST" action="#">
 								<input type="hidden" name="make_deposit" value="<?php echo str_shuffle(time().'asdfghjkl1234567890qwertyuiopzxcvbnm') ?>">
 								<div class="mb-4">
-									<label for="depositAccount" class="form-label">Wallet type</label>
+									<label for="depositAccount" class="form-label">Crypto type</label>
 									<select name="wallet_type" class="form-select" id="depositAccount" required>
-										<option selected disabled value="">Select wallet</option>
+										<option selected disabled value="">Select crypto</option>
 										<?php
 										foreach ($Controller->cryptoWallets() as $key => $value) {
-											echo '<option value="' . $value['name'] . '">' . $value['name'] . '</option>';
+											?>
+											<option value="<?php echo $value['name'] ?>"
+												data-address="<?php echo $value['wallet_address'] ?>"
+												data-code="<?php echo $value['qrcode'] ?>">
+												<?php echo $value['name'] ?> wallet
+											</option>
+											<?php
 										}
 										?>
 									</select>
 								</div>
-								<div class="mb-4">
-									<label for="depositAmount" class="form-label">Amount (USD)</label>
+								<div class="col-sm-9 mx-auto mb-3" id="showWalletInfo" style="display:none;">
+									<div id="img" class="col-9 col-sm-4 mx-auto p-2 rounded-3 overflow-hidden mb-3" style="background-color:var(--surface-hover);">
+										<img src="" class="w-100" />
+										<p class="text-muted m-0 small text-center pt-1">scan to send</p>
+									</div>
+									<div class="input-group">
+										<input type="text" id="depositWallet" class="form-control text-muted" disabled />
+										<button type="button" class="input-group-text">copy</button>
+									</div>
+									<small class="d-block text-muted m-0 small pt-1" id="coinInfo"></small>
+								</div>
+								<div class="mb-3">
+									<label for="depositAmount" class="form-label">Amount </label>
 									<div class="input-group">
 										<span class="input-group-text">€</span>
 										<input type="number" name="amount" class="form-control" id="depositAmount" placeholder="0.00"
 											min="100" required>
 									</div>
-									<small class="text-muted">Minimum deposit: €50.00</small>
+									<small class="text-muted d-block">Minimum deposit: €50.00</small>
 								</div>
-								<div class="mb-4">
+								<div class="mb-3">
 									<label class="form-label">Upload reciept</label>
 									<div class="input-group">
 										<input type="file" name="image" accept="image/*" class="form-control" required />
 									</div>
 								</div>
-
-								<!-- <div class="mb-3">
-									<label class="form-label">Quick Amounts</label>
-									<div class="d-flex gap-2 flex-wrap">
-										<button type="button" class="btn btn-outline-secondary quick-amount"
-											data-amount="1000">€1,000</button>
-										<button type="button" class="btn btn-outline-secondary quick-amount"
-											data-amount="5000">€5,000</button>
-										<button type="button" class="btn btn-outline-secondary quick-amount"
-											data-amount="10000">€10,000</button>
-										<button type="button" class="btn btn-outline-secondary quick-amount"
-											data-amount="25000">€25,000</button>
-										<button type="button" class="btn btn-outline-secondary quick-amount"
-											data-amount="50000">€50,000</button>
-									</div>
-								</div> -->
 
 								<div class="d-grid">
 									<button type="submit" class="btn bg-primary submit-btn text-light btn-lg">
@@ -128,11 +129,11 @@ require '../config/session.php';
 						<div class="card-body">
 							<div class="mb-3">
 								<small class="text-muted d-block mb-1">Processing Time</small>
-								<p class="mb-0">1-3 business days</p>
+								<p class="mb-0">Fast and secure</p>
 							</div>
 							<div class="mb-3">
 								<small class="text-muted d-block mb-1">Transaction Fee</small>
-								<p class="mb-0">Free for bank transfers</p>
+								<p class="mb-0">€5.00</p>
 							</div>
 							<div class="mb-3">
 								<small class="text-muted d-block mb-1">Minimum Deposit</small>
@@ -205,6 +206,25 @@ require '../config/session.php';
 	<script src="assets/global/js/jquery.min.js"></script>
 	<script src="assets/vendor/mckenziearts/laravel-notify/js/notify.js"></script>
 	<script src="../js/forms.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#depositAccount').on('change', function() {
+				const selectedMethod = $("#depositAccount option:selected");
+				const name = selectedMethod.val();
+				const wallet_address = selectedMethod.data('address');
+				const qrcode = selectedMethod.data('code');
+				$('#showWalletInfo').show();
+				if (qrcode) {
+					$('#showWalletInfo #img').show();
+					$("#showWalletInfo img").attr('src', `../assets/images/wallets/${qrcode}`);
+				}else {
+					$('#showWalletInfo #img').hide();
+				}
+				$('#depositWallet').val(wallet_address);
+				$("#coinInfo").html(`Send only ${name} to this wallet, sending other currencies might cause delay!`)
+			});
+		});
+	</script>
 	<script src="assets/js/theme.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -234,7 +234,7 @@ $progress = $totalDays > 0 ? round(($elapsedDays / $totalDays) * 100, 1) : 0;
 						<div class="card-body">
 							<div class="mb-3">
 								<small class="text-muted d-block mb-1">Total investments</small>
-								<h5 class="mb-0">$<?php echo number_format($Controller->totalInvested(), 2) ?></h5>
+								<h5 class="mb-0">€<?php echo number_format($Controller->totalInvested(), 2) ?></h5>
 							</div>
 							<div class="mb-3">
 								<small class="text-muted d-block mb-1">Running Investments</small>

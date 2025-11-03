@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION["reichs_account_id"]) && isset($_SESSION["accnt_status"])) {
-	header("Location: accounts/");
+	header("Location: accounts/index");
 }
 ?>
 <!doctype html>

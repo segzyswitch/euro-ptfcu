@@ -67,7 +67,7 @@ $transaction = $Controller->singleTransaction($_GET['trx']);
 					}
 					?>
 				</div>
-				<h4 class="mb-0">$<?php echo number_format($transaction['amount'], 2) ?></h4>
+				<h4 class="mb-0">€<?php echo number_format($transaction['amount'], 2) ?></h4>
 				<p class="mb-0"><?php echo $transaction['details'] ?></p>
 			</div>
 			<!-- Transaction List -->

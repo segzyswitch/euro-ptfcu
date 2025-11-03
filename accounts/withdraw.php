@@ -58,7 +58,7 @@ require '../config/session.php';
 									</select>
 								</div>
 								<div class="mb-4">
-									<label for="withdrawAmount" class="form-label">Amount (USD)</label>
+									<label for="withdrawAmount" class="form-label">Amount </label>
 									<div class="input-group">
 										<span class="input-group-text">€</span>
 										<input type="number" name="amount" class="form-control" id="withdrawAmount" placeholder="0.00"

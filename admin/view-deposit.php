@@ -51,7 +51,7 @@
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center">
                     Rate
-                    <span class="fw-bold">€1 = 1 USD</span>
+                    <span class="fw-bold">€1</span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center">
                     Trx

@@ -129,9 +129,9 @@
 															<input type="text" class="form-control sendAmount" name="amount" required
 																placeholder="Enter Amount" aria-label="Amount"
 																oninput="this.value = validateDouble(this.value)" aria-describedby="basic-addon1">
-															<span class="input-group-text" id="basic-addon1">USD</span>
+															<span class="input-group-text" id="basic-addon1">€</span>
 														</div>
-														<div class="input-info-text">Minimum 10 USD and Maximum 500000 USD</div>
+														<div class="input-info-text">Minimum €10 and Maximum €50,0000</div>
 													</div>
 													<div class="col-xl-12 col-md-12 mt-3">
 														<label for="exampleFormControlInput1" class="form-label">Send Money Note (Optional)</label>
@@ -149,11 +149,11 @@
 														<tbody>
 															<tr>
 																<td><strong>Payment Amount</strong></td>
-																<td><span class="previewAmount"></span> USD</td>
+																<td><span class="previewAmount"></span>€</td>
 															</tr>
 															<tr>
 																<td><strong>Charge</strong></td>
-																<td><span class="previewCharge"></span> USD</td>
+																<td><span class="previewCharge"></span>€</td>
 															</tr>
 															<tr>
 																<td><strong>User Email</strong></td>
