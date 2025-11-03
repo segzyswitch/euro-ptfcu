@@ -86,10 +86,10 @@
   <div class="tp-header-box p-relative">
     <div class="tp-header-logo p-relative">
       <span class="tp-header-logo-bg"></span>
-      <a href="./">
+      <a href="./" style="position:relative;right:-10px;">
         <img src="logo.png"
           alt=""
-          height='50px'
+          class="w-100"
         />
       </a>
     </div>

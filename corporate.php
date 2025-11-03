@@ -7,7 +7,7 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Partners Trust FCU</title>
+	<title>Reichsburg Online Banking</title>
 	<meta name="description" content="">
 
 	<!-- CSS here -->
@@ -21,13 +21,13 @@
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/main.css">
 
 	<link rel="shortcut icon" type="image/x-icon"
-		href="uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png">
+		href="logo.png">
 
 	<style>
 		.preloader {
 			background-position: center;
 			background-repeat: no-repeat;
-			background-image: url(uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png);
+			background-image: url(logo.png);
 			background-size: 120px 120px;
 		}
 	</style>
@@ -176,10 +176,10 @@
 							<div class="tp-service-widget-list">
 								<div class="tp-service-widget-list-content">
 									<ul>
-										<li><i class="fa-light fa-circle-check"></i> Come to Partners Trust FCU </li>
-										<li><i class="fa-light fa-circle-check"></i> Download myPartners Trust FCU Mobile </li>
-										<li><i class="fa-light fa-circle-check"></i> Log in to myPartners Trust FCU Web</li>
-										<li><i class="fa-light fa-circle-check"></i> Get myPartners Trust FCU Quick Loan</li>
+										<li><i class="fa-light fa-circle-check"></i> Come to Reichsburg Banks </li>
+										<li><i class="fa-light fa-circle-check"></i> Download my Reichsburg Banks Mobile </li>
+										<li><i class="fa-light fa-circle-check"></i> Log in to my Reichsburg Banks Web</li>
+										<li><i class="fa-light fa-circle-check"></i> Get my Reichsburg Banks Quick Loan</li>
 									</ul>
 								</div>
 							</div>

@@ -7,7 +7,7 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Partners Trust FCU</title>
+	<title>Reichsburg Online Banking</title>
 	<!-- CSS here -->
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/animate.css">
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/swiper-bundle.css">
@@ -18,13 +18,13 @@
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/spacing.css">
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/main.css">
 
-	<link rel="shortcut icon" type="image/x-icon" href="uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png">
+	<link rel="shortcut icon" type="image/x-icon" href="logo.png">
 
 	<style>
 		.preloader {
 			background-position: center;
 			background-repeat: no-repeat;
-			background-image: url(uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png);
+			background-image: url(logo.png);
 			background-size: 120px 120px;
 		}
 	</style>
@@ -59,14 +59,14 @@
 									<div class="col-lg-7">
 										<div class="tp-hero-content p-relative">
 											<div class="tp-hero-title-wrapper">
-												<span class="tp-hero-subtitle">Partners Trust FCU</span>
+												<span class="tp-hero-subtitle">Reichsburg Online Banking</span>
 												<h2 class="tp-hero-title">Bank with confidence, harvest the rewards</h2>
-												<p>Mutual fund from Partners Trust FCU Asset Management that invests in Greek and
+												<p>Mutual fund from Reichsburg Online Banking Asset Management that invests in Greek and
 													international corporate bonds in dollars, euros and pounds.</p>
 											</div>
 											<div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
 												<div class="tp-hero-btn mr-30">
-													<a class="tp-btn" href="signup">Sign in</a>
+													<a class="tp-btn" href="accounts/">Sign in</a>
 												</div>
 											</div>
 										</div>
@@ -92,16 +92,16 @@
 									<div class="col-lg-7">
 										<div class="tp-hero-content p-relative">
 											<div class="tp-hero-title-wrapper">
-												<span class="tp-hero-subtitle">Partners Trust FCU</span>
+												<span class="tp-hero-subtitle">Reichsburg Online Banking</span>
 												<h2 class="tp-hero-title">Where your
 													financial dreams
 													become reality</h2>
-												<p>In Partners Trust FCU we offers you annual income (2.60% forecast up till 2030) and
+												<p>In Reichsburg Online Banking we offers you annual income (2.60% forecast up till 2030) and
 													capital appreciation at the end of the holding period in 2028.</p>
 											</div>
 											<div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
 												<div class="tp-hero-btn mr-30">
-													<a class="tp-btn" href="accounts">Enter Account</a>
+													<a class="tp-btn" href="accounts/">Enter Account</a>
 												</div>
 											</div>
 										</div>
@@ -127,15 +127,15 @@
 									<div class="col-lg-7">
 										<div class="tp-hero-content p-relative">
 											<div class="tp-hero-title-wrapper">
-												<span class="tp-hero-subtitle">Partners Trust FCU</span>
+												<span class="tp-hero-subtitle">Reichsburg Online Banking</span>
 												<h2 class="tp-hero-title">Our mission is your financial success</h2>
-												<p>With Partners Trust FCU Benefit you pay less every month for the transactions you make
+												<p>With Reichsburg Online Banking Benefit you pay less every month for the transactions you make
 													from your account. Activate the program online and save up to 20.25% every month.
 												</p>
 											</div>
 											<div class="tp-hero-button-wrapper d-flex flex-wrap align-items-center">
 												<div class="tp-hero-btn mr-30">
-													<a class="tp-btn" href="login">Online Banking <span></span></a>
+													<a class="tp-btn" href="accounts/">Online Banking <span></span></a>
 												</div>
 											</div>
 										</div>
@@ -248,8 +248,8 @@
 										</span>
 									</div>
 									<div class="tp-service-item-content">
-										<h4 class="tp-service-item-title"><a>Come to Partners Trust FCU</a></h4>
-										<p>Open your first account at Partners Trust FCU, and get a debit card and e-Banking codes from
+										<h4 class="tp-service-item-title"><a>Come to Reichsburg Online Banking</a></h4>
+										<p>Open your first account at Reichsburg Online Banking, and get a debit card and e-Banking codes from
 											your mobile.</p>
 									</div>
 									<div class="tp-service-item-thumb">
@@ -270,8 +270,8 @@
 										</span>
 									</div>
 									<div class="tp-service-item-content">
-										<h4 class="tp-service-item-title"><a>Log in to Partners Trust FCU Web</a></h4>
-										<p>Get full control of your transactions and banking products, at Partners Trust FCU and other
+										<h4 class="tp-service-item-title"><a>Log in to Reichsburg Online Banking Web</a></h4>
+										<p>Get full control of your transactions and banking products, at Reichsburg Online Banking and other
 											banks, from your computer.</p>
 									</div>
 									<div class="tp-service-item-thumb">
@@ -295,7 +295,7 @@
 										</span>
 									</div>
 									<div class="tp-service-item-content">
-										<h4 class="tp-service-item-title"><a>Get Partners Trust FCU Loan</a></h4>
+										<h4 class="tp-service-item-title"><a>Get Reichsburg Online Banking Loan</a></h4>
 										<p>Secure a consumer loan of up to $10,000 online. Apply from your mobile or computer, on
 											the first day.</p>
 									</div>
@@ -331,8 +331,8 @@
 								</div>
 								<div class="tp-process-item-content">
 									<h4 class="tp-process-item-title">Banking Services</h4>
-									<p>Partners Trust FCU has a great range of products to offer you complete banking services. So ditch
-										your old bank and switch to Partners Trust FCU today. It's easier than you think to make the move.
+									<p>Reichsburg Online Banking has a great range of products to offer you complete banking services. So ditch
+										your old bank and switch to Reichsburg Online Banking today. It's easier than you think to make the move.
 										.</p>
 								</div>
 							</div>

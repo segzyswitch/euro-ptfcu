@@ -1,19 +1,19 @@
 <?php
 session_start();
 
-if ( isset($_SESSION["ptcu_account_id"]) && isset($_SESSION["accnt_status"]) ) {
-	$user_id = $_SESSION["ptcu_account_id"];
+if ( isset($_SESSION["reichs_account_id"]) && isset($_SESSION["accnt_status"]) ) {
+	$user_id = $_SESSION["reichs_account_id"];
 	$status = $_SESSION["accnt_status"];
 	// NOT CONFIRMED
 	if ( $status == 'pending' ) {
-		unset($_SESSION["ptcu_account_id"]);
+		unset($_SESSION["reichs_account_id"]);
 		unset($_SESSION["accnt_status"]);
 		header("Location: ../login?confirm_acnt");
 		return false;
 	}else
 	// ACCOUNT LOCKED
 	if ( $status == 'locked' ) {
-		unset($_SESSION["ptcu_account_id"]);
+		unset($_SESSION["reichs_account_id"]);
 		unset($_SESSION["accnt_status"]);
 		header("Location: ../login?accnt_locked");
 		return false;
@@ -21,6 +21,7 @@ if ( isset($_SESSION["ptcu_account_id"]) && isset($_SESSION["accnt_status"]) ) {
 
 	require_once '../config/Controller.php';
 	$Controller = new Controller;
+	$user_info = $Controller->User();
 }else {
 	header("Location: ../login?login");
 }

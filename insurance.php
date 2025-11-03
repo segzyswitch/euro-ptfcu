@@ -7,7 +7,7 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Partners Trust FCU</title>
+	<title>Reichsburg Online Banking</title>
 	<meta name="description" content="">
 
 	<!-- CSS here -->
@@ -21,13 +21,13 @@
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/main.css">
 
 	<link rel="shortcut icon" type="image/x-icon"
-		href="uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png">
+		href="logo.png">
 
 	<style>
 		.preloader {
 			background-position: center;
 			background-repeat: no-repeat;
-			background-image: url(uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png);
+			background-image: url(logo.png);
 			background-size: 120px 120px;
 		}
 	</style>
@@ -114,7 +114,7 @@
 										<p>Individuals and businesses are eligible for Money Market Accounts. Overdraft Privilege available
 											after qualifying period.</p>
 
-										<p>Open this account with a minimum opening deposit of $1000 at your nearest Partners Trust FCU location.
+										<p>Open this account with a minimum opening deposit of $1000 at your nearest Reichsburg Banks location.
 										</p>
 
 
@@ -205,7 +205,7 @@
 									<span><img src="uss-modules/uss-bank/bank-home/assets/img/blog/postbox/icon-1.svg" alt=""></span>
 								</div>
 								<p>Ever thought of how to make your programming life easier in developing website?
-									Partners Trust FCU offers the best solution for a simple programming lifestyle</p>
+									Reichsburg Banks offers the best solution for a simple programming lifestyle</p>
 							</div>
 						</div>
 

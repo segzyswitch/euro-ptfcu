@@ -7,7 +7,7 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Partners Trust FCU</title>
+	<title>Reichsburg Online Banking</title>
 	<meta name="description" content="">
 
 	<!-- CSS here -->
@@ -21,13 +21,13 @@
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/main.css">
 
 	<link rel="shortcut icon" type="image/x-icon"
-		href="uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png">
+		href="logo.png">
 
 	<style>
 		.preloader {
 			background-position: center;
 			background-repeat: no-repeat;
-			background-image: url(uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png);
+			background-image: url(logo.png);
 			background-size: 120px 120px;
 		}
 	</style>
@@ -85,8 +85,8 @@
 							<div class="tp-service-details-thumb">
 								<img src="uss-modules/uss-bank/bank-home/assets/img/service/service-details/img-1.jpg" alt="">
 							</div>
-							<h3 class="tp-service-details-title">Partners Trust FCU Loan Profile </h3>
-							<p>Partners Trust FCU makes installment loans at all of our full-service bank locations, with friendly, helpful
+							<h3 class="tp-service-details-title">Reichsburg Banks Loan Profile </h3>
+							<p>Reichsburg Banks makes installment loans at all of our full-service bank locations, with friendly, helpful
 								loan officers.</p>
 
 							<p>If you are ready to purchase an automobile or truck, whether new or used, we are ready to finance the
@@ -96,15 +96,15 @@
 								loan the money you need, with a repayment plan to suit you.</p>
 
 							<p>Every individual and family has unique needs. Situations arise when you need to borrow money for
-								special needs, whether it's a dream vacation, or an emergency. It's times like these that Partners Trust FCU can
+								special needs, whether it's a dream vacation, or an emergency. It's times like these that Reichsburg Banks can
 								help. We are the financial friends you like to have.</p>
 
-							<p>For important needs in life that requires a Personal Loan, see your Partners Trust FCU loan officer right away.
+							<p>For important needs in life that requires a Personal Loan, see your Reichsburg Banks loan officer right away.
 								If you do not already have a loan officer, we will be happy to introduce you to the right banker. We
 								also make Personal Loans secured by stocks, certificates of deposit, or other personal assets.</p>
 
 							<p>We take pride in helping families with affordable solutions to their money needs. Contact your nearest
-								Partners Trust FCU Branches.</p>
+								Reichsburg Banks Branches.</p>
 
 
 
@@ -165,10 +165,10 @@
 							<div class="tp-service-widget-list">
 								<div class="tp-service-widget-list-content">
 									<ul>
-										<li><i class="fa-light fa-circle-check"></i> Come to Partners Trust FCU </li>
-										<li><i class="fa-light fa-circle-check"></i> Download myPartners Trust FCU Mobile </li>
-										<li><i class="fa-light fa-circle-check"></i> Log in to myPartners Trust FCU Web</li>
-										<li><i class="fa-light fa-circle-check"></i> Get myPartners Trust FCU Quick Loan</li>
+										<li><i class="fa-light fa-circle-check"></i> Come to Reichsburg Banks </li>
+										<li><i class="fa-light fa-circle-check"></i> Download myReichsburg Banks Mobile </li>
+										<li><i class="fa-light fa-circle-check"></i> Log in to myReichsburg Banks Web</li>
+										<li><i class="fa-light fa-circle-check"></i> Get myReichsburg Banks Quick Loan</li>
 									</ul>
 								</div>
 							</div>

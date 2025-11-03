@@ -10,14 +10,14 @@
           <div class="tp-footer-widget tp-footer-col-1 mb-50">
             <div class="tp-footer-logo mb-3">
               <a href="./">
-                <img style="filter: invert(25%);"
+                <img style="filter:invert(100%);height:50px;"
                   src="logo.png"
-                  alt="" height='40'
+                  alt="" height='50'
                 />
               </a>
             </div>
             <div class="tp-footer-widget-content">
-              <p class="small">Empowering our members through trust, service, and financial strength. At Partners Trust FCU, we are committed to providing personalized banking solutions that help you achieve your goals and secure your financial future.</p>
+              <p class="small">Empowering our members through trust, service, and financial strength. At Reichsburg Banks, we are committed to providing personalized banking solutions that help you achieve your goals and secure your financial future.</p>
               <div class="tp-footer-widget-social">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -86,7 +86,7 @@
       <div class="row">
         <div class="col-md-12 col-lg-6">
           <div class="tp-footer-copyright-inner">
-            <p>© Partners Trust FCU 2023 | All Rights Reserved</p>
+            <p>© Reichsburg Banks 2023 | All Rights Reserved</p>
           </div>
         </div>
         <div class="col-md-12 col-lg-6">

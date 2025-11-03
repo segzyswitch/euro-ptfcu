@@ -7,7 +7,7 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Partners Trust FCU</title>
+	<title>Reichsburg Online Banking</title>
 	<meta name="description" content="">
 
 	<!-- CSS here -->
@@ -21,13 +21,13 @@
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/main.css">
 
 	<link rel="shortcut icon" type="image/x-icon"
-		href="uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png">
+		href="logo.png">
 
 	<style>
 		.preloader {
 			background-position: center;
 			background-repeat: no-repeat;
-			background-image: url(uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png);
+			background-image: url(logo.png);
 			background-size: 120px 120px;
 		}
 	</style>
@@ -92,14 +92,14 @@
 								<div class="tp-postbox-content">
 
 									<h3 class="tp-postbox-title">
-										<a>Partners Trust FCU Investments</a>
+										<a>Reichsburg Banks Investments</a>
 									</h3>
 									<div class="tp-postbox-text">
 										<p>
 
 
 
-											Partners Trust FCU Investment group has set up to deliver a wide range of Investment Banking Products and
+											Reichsburg Banks Investment group has set up to deliver a wide range of Investment Banking Products and
 											services.</p>
 
 										<p>Our Investment Group therefore represents the Bank’s resolve at diversifying her products and
@@ -117,7 +117,7 @@
 										</ui>
 
 										</br>
-										<p><strong>Partners Trust FCU Asset Management:</strong></p>
+										<p><strong>Reichsburg Banks Asset Management:</strong></p>
 
 										<p>Our Asset Management provides unique portfolio Management services designed for private
 											individuals and institutional investors seeking professional asset management expertise.</p>
@@ -232,7 +232,7 @@
 									<span><img src="uss-modules/uss-bank/bank-home/assets/img/blog/postbox/icon-1.svg" alt=""></span>
 								</div>
 								<p>Ever thought of how to make your programming life easier in developing website?
-									Partners Trust FCU offers the best solution for a simple programming lifestyle</p>
+									Reichsburg Banks offers the best solution for a simple programming lifestyle</p>
 							</div>
 						</div>
 

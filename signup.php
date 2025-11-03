@@ -7,7 +7,7 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Register with us - Partners Trust FCU</title>
+	<title>Register with us - Reichsburg Online Banking</title>
 	<meta name="description" content="">
 
 	<!-- CSS here -->
@@ -20,14 +20,13 @@
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/spacing.css">
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/main.css">
 
-	<link rel="shortcut icon" type="image/x-icon"
-		href="uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png">
+	<link rel="shortcut icon" type="image/x-icon" href="logo.png">
 
 	<style>
 		.preloader {
 			background-position: center;
 			background-repeat: no-repeat;
-			background-image: url(uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png);
+			background-image: url(logo.png);
 			background-size: 120px 120px;
 		}
 	</style>

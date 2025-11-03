@@ -7,9 +7,9 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Partners Trust FCU</title>
+	<title>Reichsburg Online Banking</title>
 	<meta name="description" content="Ever thought of how to make your programming life easier in developing website? 
-Partners Trust FCU offers the best solution for a simple programming lifestyle">
+Reichsburg Banks offers the best solution for a simple programming lifestyle">
 
 	<!-- CSS here -->
 	<link rel="stylesheet"
@@ -30,13 +30,13 @@ Partners Trust FCU offers the best solution for a simple programming lifestyle">
 		href="uss-modules/uss-bank/bank-home/assets/css/main.css">
 
 	<link rel="shortcut icon" type="image/x-icon"
-		href="uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png">
+		href="logo.png">
 
 	<style>
 		.preloader {
 			background-position: center;
 			background-repeat: no-repeat;
-			background-image: url(uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png);
+			background-image: url(logo.png);
 			background-size: 120px 120px;
 		}
 	</style>
@@ -112,12 +112,12 @@ Partners Trust FCU offers the best solution for a simple programming lifestyle">
 								<h3 class="tp-postbox-title2">Current Deposit</h3>
 								<p>Current account is so much safer, more flexible and suitable to the personal and business purposes
 									for withdrawal or fund transfer by cheque (instead of a large amount of cash carriage) with unlimited
-									cash amount transferred at any Partners Trust FCU inter-branch office.</p>
+									cash amount transferred at any Reichsburg Banks inter-branch office.</p>
 
 								<h3 class="tp-postbox-title2">Savings Deposit</h3>
 
 								<p>Savings account is much more convenient and suitable to the daily transaction purposes for deposit,
-									withdrawal and for fund transfer with unlimited cash amount transferred at any Partners Trust FCU inter-branch
+									withdrawal and for fund transfer with unlimited cash amount transferred at any Reichsburg Banks inter-branch
 									office. It also enables the account holder to access to a wide range of other banking services and
 									electronic access. </p>
 
@@ -128,7 +128,7 @@ Partners Trust FCU offers the best solution for a simple programming lifestyle">
 											purpose for high-yield deposit redeemed on maturity date.</p>
 									</div>
 									<div class="tp-postbox-list">
-										<h4 class="tp-postbox-list-title"><i class="fa-regular fa-check"></i>Partners Trust FCU Save-i Account</h4>
+										<h4 class="tp-postbox-list-title"><i class="fa-regular fa-check"></i>Reichsburg Banks Save-i Account</h4>
 										<p>Save-i account doubles your confidence in safety and worth when a savings or fixed deposit
 											account is tied to a special insurance purpose for accidental coverage.</p>
 									</div>
@@ -139,11 +139,11 @@ Partners Trust FCU offers the best solution for a simple programming lifestyle">
 								</div>
 
 								<p>For customers who need to do banking transactions or to inquire their accounting information
-									urgently, Partners Trust FCU recommends Tele-banking service to facilitate their convenience. The service is
+									urgently, Reichsburg Banks recommends Tele-banking service to facilitate their convenience. The service is
 									provided on a real-time basis via our efficiently automatic system everyday all 24 Hours. Contact us
 									for detail. </p>
 
-								<p>Customers can do banking transaction conveniently via Partners Trust FCU Internet Banking Service instead of
+								<p>Customers can do banking transaction conveniently via Reichsburg Banks Internet Banking Service instead of
 									taking their time to go to the branch. Contact us for detail</p>
 
 
@@ -235,7 +235,7 @@ Partners Trust FCU offers the best solution for a simple programming lifestyle">
 												alt=""></span>
 									</div>
 									<p>Ever thought of how to make your programming life easier in developing website?
-										Partners Trust FCU offers the best solution for a simple programming lifestyle</p>
+										Reichsburg Banks offers the best solution for a simple programming lifestyle</p>
 								</div>
 							</div>
 

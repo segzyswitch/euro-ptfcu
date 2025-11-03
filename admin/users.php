@@ -1,268 +1,316 @@
 <?php require('config/session.php'); ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Users - PartnersTrust FCU</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Favicon icon -->
-  <link rel="shortcut icon" href="../ui/assets/img/favicon.ico" type="image/x-icon" />
-  <!-- DataTables -->
-  <link rel="stylesheet" href="assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-     folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="assets/dist/css/skins/_all-skins.min.css">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="assets/bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="assets/dist/css/AdminLTE.min.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="assets/bower_components/morris.js/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="assets/bower_components/jvectormap/jquery-jvectormap.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="assets/bower_components/bootstrap-daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css" integrity="sha512-DIW4FkYTOxjCqRt7oS9BFO+nVOwDL4bzukDyDtMO7crjUZhwpyrWBFroq+IqRe6VnJkTpRAS6nhDvf0w+wHmxg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://demofederal.dirtyscripts.shop/assets/user/js/vendor/jquery/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <style>
-    .my-switch input {display: none;}
-    .my-switch label {
-      display: inline-block;
-      width: 40px;
-      height: 18px;
-      border-radius: 15px;
-      background-color: #ccc;
-      transition: all .4s;
-      position: relative;
-    }
-    .my-switch label:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      aspect-ratio: 1;
-      height: 18px;
-      background-color: #888;
-      z-index: 1;
-      border-radius: 50%;
-      left: 0;
-      transition: all .4s;
-      box-shadow: 0 0 5px #333;
-    }
-    .my-switch input:checked + label:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: calc(100% - 18px);
-      aspect-ratio: 1;
-      height: 18px;
-      background-color: blue;
-      z-index: 1;
-      border-radius: 50%;
-    }
-  </style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reichsburg Banks - Manage Users</title>
+	<link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+	<link rel="stylesheet" href="./assets/theme/global/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./assets/theme/global/css/line-awesome.min.css" />
+	<link rel="stylesheet" href="./assets/theme/global/css/bootstrap-icons.min.css" />
+	<link rel="stylesheet" href="./assets/theme/global/css/select2.min.css" />
+	<link rel="stylesheet" href="./assets/theme/global/css/toaster.css" />
+	<link rel="stylesheet" href="./assets/theme/global/css/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="./assets/theme/global/css/apexcharts.css" />
+	<link rel="stylesheet" href="./assets/theme/global/css/datepicker.min.css" />
+	<link rel="stylesheet" href="./assets/theme/admin/css/style.css" />
+	<link rel="stylesheet" href="./assets/theme/admin/css/simple-bar.css" />
+	<link rel="stylesheet" href="./assets/theme/admin/css/responsive.css" />
+	<link rel="stylesheet" href="./assets/theme/admin/css/summernote-lite.min.css" />
+	<link rel="stylesheet" href="./assets/theme/admin/css/spectrum.css" />
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
 
-<div class="wrapper">
+<body>
 
-  <!-- HEADER -->
-  <?php include('inc/header.php'); ?>
-  <!-- Left side column. contains the logo and sidebar -->
-  <?php include('inc/sidebar.php'); ?>
+	<!-- SIDEBAR -->
+	<?php include 'inc/sidebar.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>All Users</h1>
-      <ol class="breadcrumb">
-        <li><a href="./dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">All Users</li>
-      </ol>
-    </section>
+	<div id="mainContent" class="main_content">
+		<!-- HEADER -->
+		<?php include 'inc/header.php'; ?>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="box">
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div class="table-responsive">
-                <table id="example2" class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Account No</th>
-                      <th>Name</th>
-                      <th>Email/Username</th>
-                      <th>Balance</th>
-                      <th>Transaction</th>
-                      <th>Status</th>
-                      <th>Created</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  	<?php
-                  	$count = 1;
-                  	foreach ($Authroller->Users() as $key => $value) {
-                  		?>
-                    <tr id="userRow<?php echo $value['id']; ?>">
-                      <td><?php echo $count; ?></td>
-                      <td>
-                      	<span><?php echo $value['current_account']; ?></span>
-                      </td>
-                      <td><?php echo $value['firstname'].' '.$value['lastname']; ?></td>
-                      <td><?php echo $value['email']; ?></td>
-                      <td>€<?php echo number_format($value['savings_bal']+$value['current_bal']); ?></td>
-                      <td>
-                        <div class="my-switch">
-                          <input type="checkbox"
-                            id="switch<?php echo $value['id']; ?>"
-                            class="transact-switch"
-                            <?= $value['transactions']=='true' ? 'checked' : '' ?>
-                            onclick="updateStatus(<?php echo $value['id']; ?>, <?php echo $value['transactions']; ?>)"
-                          />
-                          <label for="switch<?php echo $value['id']; ?>"></label>
-                        </div>
-                      </td>
-                      <td class="text-uppercase"><?php echo $value['status']; ?></td>
-                      <td><?php echo date("d M, Y", strtotime($value['createdat'])); ?></td>
-                      <td style="padding:5px;">
-                        <a href="./view_users.php?id=<?php echo $value['id']; ?>" class="btn p-0 text-primary w-100">View</a>
-                        <?php
-                        if ( $value['status'] == 'pending' ) {
-                          ?><a id="statusBtn<?php echo $value['id']; ?>" onclick="changeStatus(<?php echo $value['id']; ?>, 'active')" class="btn p-0 text-success w-100">Activate</a><?php
-                        }elseif ( $value['status'] == 'disabled' ) {
-                          ?><a id="statusBtn<?php echo $value['id']; ?>" onclick="changeStatus(<?php echo $value['id']; ?>, 'active')" class="btn p-0 text-success w-100">Activate</a><?php
-                        }else {?><a id="statusBtn<?php echo $value['id']; ?>" onclick="changeStatus(<?php echo $value['id']; ?>, 'disabled')" class="btn p-0 text-warning w-100">Suspend</a><?php
-                        }
-                        ?>
-                        <a id="deleteBtn<?php echo $value['id']; ?>" onclick="deleteUser(<?php echo $value['id']; ?>)" class="btn p-0 text-white bg-red btn-sm w-100">Del</a>
-                      </td>
-                    </tr>
-                  		<?php
-                  		$count++;
-                  	}
-                  	?>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <br>
-                    </tr>
-                  </tfoot>
-                </table>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+		<div class="dashboard_container">
+			<section>
+				<h3 class="page-title">Manage Users</h3>
 
-  
-</div>
-<!-- ./wrapper -->
+				<div class="card">
+					<div class="responsive-table">
+						<table>
+							<thead>
+								<tr>
+									<th>Joined At</th>
+									<th>Name</th>
+									<th>Email</th>
+									<th>Wallet Balance</th>
+									<th>Status</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php
+								foreach ($Authroller->Users() as $key => $value) {
+									?>
+								<tr>
+									<td data-label="Joined At">
+										<span><?php echo date('Y-m-d', strtotime($value['createdat'])) ?></span>
+									</td>
+									<td data-label="Name">
+										<a href="user-details?uuid=<?php echo $value['uuid'] ?>"><?php echo $value['fname'].' '.$value['lname'] ?></a>
+									</td>
+									<td data-label="Email">
+										<span><?php echo $value['email'] ?></span>
+									</td>
+									<td data-label="Wallet Balance">$<?php echo number_format($value['wallet_bal']) ?>.00</td>
+									<td data-label="Status">
+										<?php
+											if($value['status']=='confirmed') echo '<span class="badge badge--success">Confirmed</span>';
+											elseif($value['status']=='pending') echo '<span class="badge badge--warning">Pending</span>';
+											else echo '<span class="badge badge--danger">Locked</span>';
+										?>
+									</td>
+									<td data-label="Action">
+										<p class="m-0"><a href="user-details?uuid=<?php echo $value['uuid'] ?>">Manage</a></p>
+									</td>
+								</tr>
+									<?php
+								}
+								?>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
 
-<!-- jQuery 3 -->
-<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- CUSTOM FORM JS -->
-<script src="assets/forms/script.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Query 3 -->
-<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- DataTables -->
-<script src="assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+	<script src="./assets/theme/global/js/jquery-3.7.1.min.js"></script>
+	<script src="./assets/theme/global/js/bootstrap.bundle.min.js"></script>
+	<script src="./assets/theme/global/js/select2.min.js"></script>
+	<script src="./assets/theme/global/js/toaster.js"></script>
+	<script src="./assets/theme/global/js/swiper-bundle.min.js"></script>
+	<script src="./assets/theme/global/js/apexcharts.js"></script>
+	<script src="./assets/theme/global/js/datepicker.min.js"></script>
+	<script src="./assets/theme/global/js/datepicker.en.js"></script>
+	<script src="./assets/theme/admin/js/ckd.js"></script>
+	<script src="./assets/theme/admin/js/simple-bar.min.js"></script>
+	<script src="./assets/theme/admin/js/script.js"></script>
+	<script src="./assets/theme/admin/js/summernote-lite.min.js"></script>
+	<script src="./assets/theme/admin/js/spectrum.js"></script>
+	<script>
+		"use strict";
+		function notify(status, message) {
+			toastr[status](message);
+		}
+	</script>
+	<script>
+		"use strict";
+		$(document).ready(function () {
+			$('.created-update').on('click', function () {
+				const modal = $('#credit-add-return');
+				const id = $(this).data('id');
+				modal.find('input[name=id]').val(id);
+				modal.modal('show');
+			});
 
+			$('.wallets').on('click', function () {
+				$('.modal-pay-list').empty();
+				const modal = $('#list-wallet');
+				const walletData = $(this).data('id');
+				const currency = "$";
+				const walletProperties = ['primary_balance', 'investment_balance', 'trade_balance', 'practice_balance'];
+				walletProperties.forEach(property => {
+					const propertyName = property.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+					const balanceValue = currency + parseFloat(walletData[property]).toFixed(2);
+					const listItem = `<li>
+							<span>${propertyName}</span>
+							<span>${balanceValue}</span>
+							</li>`;
 
-<!-- AdminLTE for demo purposes -->
-<script src="assets/dist/js/demo.js"></script>
+					modal.find('.modal-pay-list').append(listItem);
+				});
 
-<!-- Bootstrap 3.3.7 -->
-<script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="assets/bower_components/raphael/raphael.min.js"></script>
-<script src="assets/bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="assets/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="assets/bower_components/moment/min/moment.min.js"></script>
-<script src="assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="assets/bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="assets/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="assets/dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="assets/dist/js/demo.js"></script>
+				modal.modal('show');
+			});
+		});
+	</script>
+	<script>
+		"use strict";
+		(function () {
+			const htmlRoot = document.documentElement;
+			const sidebarControlBtn = document.querySelector('.sidebar-control-btn');
+			const menuTitle = document.querySelectorAll('.sidebar-menu-title');
+			const minWidth = 1199;
 
-<script>
+			window.addEventListener("DOMContentLoaded", () => {
+				handleSetAttribute(htmlRoot, 'data-sidebar', "lg");
+				handleResize();
 
-$("#send-to").change(function () {
-  if ($(this).val() == '2'){
-    $(".user-recipient").removeClass('hide');
-    return;
-  }
-  $(".user-recipient").addClass('hide');
-});
+				sidebarControlBtn.addEventListener("click", () => {
+					const windowWidth = window.innerWidth;
+					if (windowWidth <= minWidth) {
+						showSidebar();
+						createOverlay();
+					} else {
+						handleSidebarToggle();
+					}
+				});
+			});
 
-  $(function () {
-  $('.select2').select2();
-  $('#example1').DataTable()
-  $('#example2').DataTable({
-    'paging'    : true,
-    'lengthChange': false,
-    'searching'   : false,
-    'ordering'  : true,
-    'info'    : true,
-    'autoWidth'   : false
-  })
-  })
-</script>
+			function createOverlay() {
+				const overlay = document.createElement('div');
+				overlay.setAttribute("id", "overlay-wrapper");
+
+				overlay.style.cssText = `
+					position: fixed;
+					inset: 0;
+					width: 100%;
+					height: 100vh;
+					background: rgb(0 0 0 / 20%);
+					z-index: 19;
+				`;
+				document.body.appendChild(overlay);
+
+				overlay.addEventListener("click", () => {
+					hideSidebar();
+					removeOverlay();
+				});
+			}
+
+			function removeOverlay() {
+				const overlayWrapper = document.querySelector("#overlay-wrapper")
+				overlayWrapper && overlayWrapper.remove();
+			}
+
+			function handleSetAttribute(elem, attr, value = 'lg') {
+				elem.setAttribute(attr, value);
+			}
+
+			function handleGetAttribute(elem, attr) {
+				return elem.getAttribute(attr);
+			}
+
+			function showSidebar() {
+				const sidebar = document.querySelector('.sidebar');
+				if (sidebar) {
+					sidebar.style.transform = 'translateX(0%)';
+					sidebar.style.visibility = 'visible';
+				}
+			}
+
+			function hideSidebar() {
+				const sidebar = document.querySelector('.sidebar');
+				if (sidebar) {
+					sidebar.style.transform = 'translateX(-100%)';
+					sidebar.style.visibility = 'hidden';
+				}
+			}
+
+			function handleSidebarToggle() {
+				const currentSidebar = handleGetAttribute(htmlRoot, 'data-sidebar');
+				const newAttributes = currentSidebar === 'sm' ? 'lg' : 'sm';
+
+				handleSetAttribute(htmlRoot, 'data-sidebar', newAttributes);
+
+				for (const title of menuTitle) {
+					const dataText = title.getAttribute('data-text');
+					title.innerHTML = newAttributes === 'sm' ? '<i class="las la-ellipsis-h"></i>' : dataText;
+				}
+			}
+
+			function handleResize() {
+				const windowWidth = window.innerWidth;
+				if (windowWidth <= minWidth) {
+					handleSetAttribute(htmlRoot, 'data-sidebar', "lg");
+					hideSidebar();
+					removeOverlay();
+				} else {
+					removeOverlay();
+					showSidebar();
+				}
+			}
+
+			window.addEventListener('resize', handleResize);
+			if (document.querySelectorAll(".sidebar-menu .collapse")) {
+				const collapses = document.querySelectorAll(".sidebar-menu .collapse");
+				Array.from(collapses).forEach(function (collapse) {
+					const collapseInstance = new bootstrap.Collapse(collapse, {
+						toggle: false,
+					});
+					collapse.addEventListener("show.bs.collapse", function (e) {
+						e.stopPropagation();
+						const closestCollapse = collapse.parentElement.closest(".collapse");
+						if (closestCollapse) {
+							const siblingCollapses = closestCollapse.querySelectorAll(".collapse");
+							Array.from(siblingCollapses).forEach(function (siblingCollapse) {
+								const siblingCollapseInstance = bootstrap.Collapse.getInstance(siblingCollapse);
+								if (siblingCollapseInstance === collapseInstance) {
+									return;
+								}
+								siblingCollapseInstance.hide();
+							});
+						} else {
+							const getSiblings = function (elem) {
+								const siblings = [];
+								let sibling = elem.parentNode.firstChild;
+								while (sibling) {
+									if (sibling.nodeType === 1 && sibling !== elem) {
+										siblings.push(sibling);
+									}
+									sibling = sibling.nextSibling;
+								}
+								return siblings;
+							};
+							const siblings = getSiblings(collapse.parentElement);
+							Array.from(siblings).forEach(function (item) {
+								if (item.childNodes.length > 2)
+									item.firstElementChild.setAttribute("aria-expanded", "false");
+								const ids = item.querySelectorAll("*[id]");
+								Array.from(ids).forEach(function (item1) {
+									item1.classList.remove("show");
+									if (item1.childNodes.length > 2) {
+										const val = item1.querySelectorAll("ul li a");
+										Array.from(val).forEach(function (subitem) {
+											if (subitem.hasAttribute("aria-expanded"))
+												subitem.setAttribute("aria-expanded", "false");
+										});
+									}
+								});
+							});
+						}
+					});
+
+					collapse.addEventListener("hide.bs.collapse", function (e) {
+						e.stopPropagation();
+						const childCollapses = collapse.querySelectorAll(".collapse");
+						Array.from(childCollapses).forEach(function (childCollapse) {
+							let childCollapseInstance;
+							childCollapseInstance = bootstrap.Collapse.getInstance(childCollapse);
+							childCollapseInstance.hide();
+						});
+					});
+				});
+			}
+
+		}());
+	</script>
+	<script>
+		"use strict";
+		const header = document.querySelector(".header");
+		if (header) {
+			const checkScroll = () => {
+				if (window.scrollY > 0) {
+					header.classList.add("sticky");
+				} else {
+					header.classList.remove("sticky");
+				}
+			};
+			window.addEventListener("scroll", checkScroll);
+			window.addEventListener("load", checkScroll);
+		}
+	</script>
 </body>
+
 </html>

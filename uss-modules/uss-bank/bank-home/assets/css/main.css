@@ -5175,7 +5175,8 @@ body .ui-tooltip {
   left: 0;
   width: 130%;
   height: 100%;
-  background: var(--tp-gradient-primary);
+  background: var(--tp-common-gray);
+  /* background: var(--tp-gradient-primary); */
   clip-path: polygon(0px 0px, 100% 0px, 76.57% 100.79%, 0% 100%);
   z-index: 1;
 }

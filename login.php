@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION["reichs_account_id"]) && isset($_SESSION["accnt_status"])) {
+	header("Location: accounts/");
+}
+?>
 <!doctype html>
 <html>
 
@@ -7,7 +13,7 @@
 
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Sign in - Partners Trust FCU</title>
+	<title>Sign in - Reichsburg Online Banking</title>
 	<meta name="description" content="">
 
 	<!-- CSS here -->
@@ -19,14 +25,15 @@
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/flaticon.css">
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/spacing.css">
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="accounts/assets/vendor/mckenziearts/laravel-notify/css/notify.css" />
 
-	<link rel="shortcut icon" type="image/x-icon" href="uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png">
+	<link rel="shortcut icon" type="image/x-icon" href="logo.png">
 
 	<style>
 		.preloader {
 			background-position: center;
 			background-repeat: no-repeat;
-			background-image: url(uss-modules/uss-dashboard-main/ud-assets/images/general/7d4b83c9fc2bc05690ebc9008015b096c10dd5c1.png);
+			background-image: url(logo.png);
 			background-size: 120px 120px;
 		}
 	</style>
@@ -57,12 +64,12 @@
 					<div class="auth-cover">
 						<div class="title text-center">
 							<!-- image -->
-							<div class='mb-2'>
+							<!-- <div class='mb-2'>
 								<img alt=""
 									src='logo.png'
-									height="60"
+									height="70"
 								/>
-							</div>
+							</div> -->
 							<p class="">Sign in to your account</p>
 						</div>
 					</div>
@@ -140,7 +147,8 @@
 	<!-- footer area end -->
 
 	<script src='uss-core/assets/js/jquery-3.6.4.min.js' data-rc='jquery'></script>
-	<script src='assets/js/forms.js' data-rc='jquery'></script>
+	<script src="accounts/assets/vendor/mckenziearts/laravel-notify/js/notify.js"></script>
+	<script src='js/forms.js'></script>
 	<script src='uss-core/assets/js/bootstrap.bundle.min.js' data-rc='bootstrap'></script>
 	<script src='uss-core/assets/js/bootbox.all.min.js' data-rc='bootbox'></script>
 	<script src='uss-core/assets/vendor/glightbox/glightbox.min.js' data-rc='glightbox'></script>
