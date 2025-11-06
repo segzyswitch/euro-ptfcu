@@ -2,7 +2,7 @@
 	<div class="sidebar-top mb-4">
 		<div class="site-logo">
 			<a href="../admin/dashboard">
-				<img src="../logo.png" width="70" class="mx-auto" alt="White Logo">
+				<img src="../logo.png" class="mx-auto w-100" alt="White Logo" />
 			</a>
 		</div>
 	</div>
@@ -24,12 +24,11 @@
 			</li>
 
 			<li class="sidebar-menu-item">
-        <a class="sidebar-menu-link collapsed" data-bs-toggle="collapse" href="#collapseDepositControl"
-           role="button" aria-expanded="true" aria-controls="collapseDepositControl">
+        <a href="deposits" class="sidebar-menu-link collapsed">
           <span><i class="las la-wallet"></i></span>
-          <p>Manage Deposits <small><i class="las la-angle-down"></i></small></p>
+          <p>Manage Deposits</p>
         </a>
-        <div class="side-menu-dropdown collapse"  id="collapseDepositControl">
+        <!-- <div class="side-menu-dropdown collapse"  id="collapseDepositControl">
           <ul class="sub-menu">
             <li class="sub-menu-item">
               <a class="sidebar-menu-link" href="deposits">
@@ -43,7 +42,7 @@
               </a>
             </li>
           </ul>
-        </div>
+        </div> -->
       </li>
 
 			<!--
@@ -123,7 +122,6 @@
 					</ul>
 				</div>
 			</li>
-			-->
 
 			<li class="sidebar-menu-item">
 				<a class="sidebar-menu-link collapsed" href="#collapseInvControl" data-bs-toggle="collapse">
@@ -145,6 +143,7 @@
           </ul>
         </div>
 			</li>
+			-->
 
 			<li class="sidebar-menu-item">
 				<a class="sidebar-menu-link collapsed" href="transactions">

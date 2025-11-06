@@ -332,7 +332,7 @@ if ( isset($_POST['make_deposit']) ) {
   $target_dir = "../uploads/";
   $check_target_file = $target_dir . $save_name;
 
-  $details = "Deposit ".number_format($amount, 2)." with ".$wallet_type;
+  $details = "Deposit $".number_format($amount)." with ".$wallet_type;
 
   // Upload proof
   if ( move_uploaded_file($check_tmp_file, $check_target_file) ) {
@@ -345,7 +345,7 @@ if ( isset($_POST['make_deposit']) ) {
     $query = $conn->prepare($deposit);
     try {
       $query->execute();
-      include './deposit-mail.php';
+      // include './deposit-mail.php';
       echo 'Transaction successful! Funds will appear in your wallet once deposit is confirmed.';
     } catch (PDOException $e) {
       echo $e->getMessage();

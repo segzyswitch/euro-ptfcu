@@ -75,7 +75,7 @@ $(document).ready(function() {
 	  ev.preventDefault();
 		
 	  $.ajax({
-	    url: "config/process.php",
+	    url: "../config/process.php",
 	    type: "POST",
 	    data: new FormData(this),
 	    cache: false,

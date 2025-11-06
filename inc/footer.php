@@ -57,7 +57,7 @@
             <h3 class="tp-footer-widget-title">Contact us</h3>
             <div class="tp-footer-widget-content">
               <div class="tp-footer-widget-contact p-3">
-                <div class="tp-footer-widget-contact-inner">
+                <!-- <div class="tp-footer-widget-contact-inner">
                   <a href="tel:7156006612">
                     <i>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
@@ -66,9 +66,9 @@
                     </i>
                     (715) 600-6612
                   </a>
-                </div>
+                </div> -->
                 <div class="tp-footer-widget-contact-inner">
-                  <a href="mailto:info@partnerstrustfcu.com"><i class="fa-solid fa-envelope"></i><span>info@partnerstrustfcu.com</span></a>
+                  <a href="mailto:info@reichsburgbanks.com"><i class="fa-solid fa-envelope"></i><span>info@partnerstrustfcu.com</span></a>
                 </div>
                 <div class="tp-footer-widget-contact-inner">
                   <a href="javascript:void(0)"><i class="fa-sharp fa-solid fa-location-dot"></i>6391 Elgin

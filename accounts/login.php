@@ -18,12 +18,6 @@ if (isset($_SESSION["reichs_account_id"]) && isset($_SESSION["accnt_status"])) {
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="assets/vendor/mckenziearts/laravel-notify/css/notify.css" />
 	<link rel="shortcut icon" href="../logo.png" type="image/png">
-
-	<style>
-		[data-bs-theme="dark"] .login--img {
-			filter: invert(100%);
-		}
-	</style>
 </head>
 
 <body class="auth-page">

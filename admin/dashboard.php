@@ -40,7 +40,7 @@
 				<!-- <button type="button" class="btn btn--primary mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Setup
 					Instructions</button> -->
 				<div class="row g-4">
-					<div class="col-md-3">
+					<div class="col-md-4">
 						<a href="	users" class="card card--hover mb-4">
 							<div class="card-body">
 								<div class="row align-items-center g-0">
@@ -57,7 +57,7 @@
 							</div>
 						</a>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-4">
 						<a href="transactions" class="card card--hover mb-4">
 							<div class="card-body">
 								<div class="row align-items-center g-0">
@@ -74,7 +74,7 @@
 							</div>
 						</a>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-4">
 						<a href="deposits" class="card card--hover mb-4">
 							<div class="card-body">
 								<div class="row align-items-center g-0">
@@ -90,133 +90,6 @@
 								</div>
 							</div>
 						</a>
-					</div>
-					<div class="col-md-3">
-						<a href="investments" class="card card--hover mb-4">
-							<div class="card-body">
-								<div class="row align-items-center g-0">
-									<div class="col-9">
-										<h6 class="mb-0 fs-13 fw-normal text--muted">Total Investments</h6>
-										<h5 class="mb-1 mt-3"><?php echo count($Authroller->allInvestments()); ?></h5>
-									</div>
-									<div class="col-3">
-										<div class="bg--pink-light avatar--lg ms-auto me-0">
-											<i class="las la-credit-card text--pink fs-30"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="row g-4">
-					<div class="col-xxl-4 col-xl-4 col-lg-4">
-						<div class="card mb-4">
-							<div class="card-body position-relative">
-								<div class="row g-2 mb-3">
-									<div class="col-sm-12">
-										<div class="card card--hover linear-card bg--linear-primary text-center h-100">
-											<div class="card-body p-3">
-												<h5 class="text-white opacity-75 fw-normal">Total Investments</h5>
-												<h4 class="fw-bold mt-1 text-white fs-18">€22620</h4>
-												<!-- <a href="investments" class="badge badge--outline"><i class="las la-arrow-circle-right fs-17"></i> View all</a> -->
-											</div>
-										</div>
-									</div>
-								</div>
-								<ul class="list-group list-group-flush border-dashed mb-0">
-									<li class="list-group-item px-0">
-										<div class="d-flex">
-											<div class="flex-grow-1 d-flex align-items-center gap-2">
-												<i class="las la-wallet text--primary fs-24"></i>
-												<h5 class="text--light fs-14">Running</h5>
-											</div>
-											<div class="flex-shrink-0 text-end">
-												<h5 class="text--dark fs-14 fw-bold">€12920</h5>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item px-0">
-										<div class="d-flex">
-											<div class="flex-grow-1 d-flex align-items-center gap-2">
-												<i class="las la-chart-line text--success fs-24"></i>
-												<h5 class="text--light fs-14">Total Profits</h5>
-											</div>
-											<div class="flex-shrink-0 text-end">
-												<h5 class="text--dark fs-14 fw-bold">€22797.32</h5>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item px-0">
-										<div class="d-flex">
-											<div class="flex-grow-1 d-flex align-items-center gap-2">
-												<i class="las la-sort-amount-up text--info fs-24"></i>
-												<h5 class="text--light fs-14">Completed</h5>
-											</div>
-											<div class="flex-shrink-0 text-end">
-												<h5 class="text--dark fs-14 fw-bold">€0</h5>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-xxl-4 col-xl-4 col-lg-4">
-						<div class="card card-height-100 mb-4">
-							<div class="card-header align-items-center d-flex">
-								<h4 class="card-title mb-0 flex-grow-1">Deposit Statistics</h4>
-							</div>
-
-							<div class="card-body">
-								<div class="text-center bg--success-light mb-3 p-4">
-									<p class="text--success fs-14">Total Deposits</p>
-									<h5 class="fw-bold mt-2 text--dark fs-17">€165975</h5>
-								</div>
-								<div class="d-flex flex-row justify-content-between flex-wrap gap-2">
-									<div class="d-flex flex-column align-items-center flex-grow-1 bg--info-light">
-										<div class="text-center p-3 w-100">
-											<p class="text--info fs-12">Pending Deposits</p>
-											<h5 class="fw-bold mt-2 text--dark">€39375</h5>
-										</div>
-									</div>
-									<div class="d-flex flex-column align-items-center flex-grow-1 bg--primary-light">
-										<div class="text-center p-3 w-100">
-											<p class="text--primary fs-12">Completed deposits</p>
-											<h5 class="fw-bold mt-2 text--dark">€1000</h5>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xxl-4 col-xl-4 col-lg-4">
-						<div class="card card-height-100">
-							<div class="card-header align-items-center d-flex">
-								<h4 class="card-title mb-0 flex-grow-1">Withdrawals Statistics</h4>
-							</div>
-
-							<div class="card-body">
-								<div class="text-center bg--danger-light mb-3 p-4">
-									<p class="text--danger fs-14">Total Withdraw</p>
-									<h5 class="fw-bold mt-2 text--dark fs-17">€24210</h5>
-								</div>
-								<div class="d-flex flex-row justify-content-between flex-wrap gap-2">
-									<div class="d-flex flex-column align-items-center flex-grow-1 bg--light">
-										<div class="text-center p-3 w-100">
-											<p class="text--light fs-12">Pending Withdraw</p>
-											<h5 class="fw-bold mt-2 text--dark">€6505</h5>
-										</div>
-									</div>
-									<div class="d-flex flex-column align-items-center flex-grow-1 bg--pink-light">
-										<div class="text-center p-3 w-100">
-											<p class="text--pink fs-12">Rejected Withdraw</p>
-											<h5 class="fw-bold mt-2 text--dark">€0</h5>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>

@@ -44,7 +44,8 @@
 									<th>Joined At</th>
 									<th>Name</th>
 									<th>Email</th>
-									<th>Wallet Balance</th>
+									<th>Current balance</th>
+									<th>Savings balance</th>
 									<th>Status</th>
 									<th>Action</th>
 								</tr>
@@ -58,12 +59,13 @@
 										<span><?php echo date('Y-m-d', strtotime($value['createdat'])) ?></span>
 									</td>
 									<td data-label="Name">
-										<a href="user-details?uuid=<?php echo $value['uuid'] ?>"><?php echo $value['fname'].' '.$value['lname'] ?></a>
+										<a href="user-details?id=<?php echo $value['id'] ?>"><?php echo $value['firstname'].' '.$value['lastname'] ?></a>
 									</td>
 									<td data-label="Email">
 										<span><?php echo $value['email'] ?></span>
 									</td>
-									<td data-label="Wallet Balance">€<?php echo number_format($value['wallet_bal']) ?>.00</td>
+									<td data-label="Current Balance">€<?php echo number_format($value['current_bal']) ?></td>
+									<td data-label="Savings Balance">€<?php echo number_format($value['savings_bal']) ?></td>
 									<td data-label="Status">
 										<?php
 											if($value['status']=='confirmed') echo '<span class="badge badge--success">Confirmed</span>';
@@ -72,7 +74,7 @@
 										?>
 									</td>
 									<td data-label="Action">
-										<p class="m-0"><a href="user-details?uuid=<?php echo $value['uuid'] ?>">Manage</a></p>
+										<p class="m-0"><a href="user-details?id=<?php echo $value['id'] ?>">Manage</a></p>
 									</td>
 								</tr>
 									<?php

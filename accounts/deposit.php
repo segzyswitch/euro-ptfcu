@@ -26,207 +26,160 @@ require '../config/session.php';
 		<?php include 'inc/panel-header.php'; ?>
 		<div class="content-body">
 			<div class="row">
-				<div class="col-lg-8">
-					<!-- Deposit Methods -->
-					<div class="card mb-4">
-						<div class="card-header pt-3">
-							<h5><i class="bi bi-wallet2"></i> Deposit funds</h5>
-						</div>
-						<div class="card-body">
-							<div class="row g-3">
-								<div class="col-md-6">
-									<div class="deposit-method">
-										<input type="radio" class="btn-check" name="depositMethod" id="bankTransfer" checked>
-										<label class="btn btn-outline-primary w-100 py-3" for="bankTransfer">
-											<i class="bi bi-currency-bitcoin fs-3 d-block mb-2"></i>
-											<span class="fw-medium">Crypto deposit</span>
-											<small class="d-block text-muted">Fast and secure</small>
-										</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="deposit-method">
-										<input type="radio" class="btn-check" name="depositMethod" id="crypto">
-										<label class="btn btn-outline-primary w-100 py-3" for="crypto">
-											<i class="bi bi-upc-scan fs-3 d-block mb-2"></i>
-											<span class="fw-medium">Check deposit</span>
-											<small class="d-block text-muted">Less than 24 hours</small>
-										</label>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Deposit Form -->
-					<div class="card mb-4">
-						<div class="card-header pt-3">
-							<h6>Crypto deposit</h6>
-						</div>
-						<div class="card-body">
-							<form id="depositForm" class="mb-2" method="POST" action="#">
-								<input type="hidden" name="make_deposit" value="<?php echo str_shuffle(time().'asdfghjkl1234567890qwertyuiopzxcvbnm') ?>">
-								<div class="mb-4">
-									<label for="depositAccount" class="form-label">Crypto type</label>
-									<select name="wallet_type" class="form-select" id="depositAccount" required>
-										<option selected disabled value="">Select crypto</option>
-										<?php
-										foreach ($Controller->cryptoWallets() as $key => $value) {
-											?>
-											<option value="<?php echo $value['name'] ?>"
-												data-address="<?php echo $value['wallet_address'] ?>"
-												data-code="<?php echo $value['qrcode'] ?>">
-												<?php echo $value['name'] ?> wallet
-											</option>
-											<?php
-										}
-										?>
-									</select>
-								</div>
-								<div class="col-sm-9 mx-auto mb-3" id="showWalletInfo" style="display:none;">
-									<div id="img" class="col-9 col-sm-4 mx-auto p-2 rounded-3 overflow-hidden mb-3" style="background-color:var(--surface-hover);">
-										<img src="" class="w-100" />
-										<p class="text-muted m-0 small text-center pt-1">scan to send</p>
-									</div>
-									<div class="input-group">
-										<input type="text" id="depositWallet" class="form-control text-muted" disabled />
-										<button type="button" class="input-group-text">copy</button>
-									</div>
-									<small class="d-block text-muted m-0 small pt-1" id="coinInfo"></small>
-								</div>
-								<div class="mb-3">
-									<label for="depositAmount" class="form-label">Amount </label>
-									<div class="input-group">
-										<span class="input-group-text">€</span>
-										<input type="number" name="amount" class="form-control" id="depositAmount" placeholder="0.00"
-											min="100" required>
-									</div>
-									<small class="text-muted d-block">Minimum deposit: €50.00</small>
-								</div>
-								<div class="mb-3">
-									<label class="form-label">Upload reciept</label>
-									<div class="input-group">
-										<input type="file" name="image" accept="image/*" class="form-control" required />
-									</div>
-								</div>
-
-								<div class="d-grid">
-									<button type="submit" class="btn bg-primary submit-btn text-light btn-lg">
-										<small><i class="bi bi-check-circle"></i> Continue to Payment</small>
-									</button>
-								</div>
-							</form>
+				<!-- Sidebar Nav -->
+				<div class="col-md-4">
+					<div class="card p-3 mb-4">
+						<h5 class="mb-3">Select Deposit Method</h5>
+						<div class="nav flex-column nav-pills me-3" id="deposit-tabs" role="tablist" aria-orientation="vertical">
+							<button class="nav-link mb-1 text-start active"
+								id="v-sepa-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#v-sepa"
+								type="button" role="tab">SEPA Bank Transfer
+							</button>
+							<button class="nav-link mb-1 text-start"
+								id="v-sepa-instant-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#v-sepa-instant"
+								type="button" role="tab">SEPA Instant
+							</button>
+							<button class="nav-link mb-1 text-start"
+								id="v-crypto-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#v-crypto"
+								type="button" role="tab">Crypto On-Ramp
+							</button>
+							<button class="nav-link mb-1 text-start"
+								id="v-giropay-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#v-giropay"
+								type="button" role="tab">Giropay
+							</button>
+							<button class="nav-link mb-1 text-start"
+								id="v-sofort-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#v-sofort"
+								type="button" role="tab">Sofort (Klarna)
+							</button>
+							<button class="nav-link mb-1 text-start"
+								id="v-card-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#v-card"
+								type="button" role="tab">Debit / Credit Card
+							</button>
+							<button class="nav-link mb-1 text-start"
+								id="v-paypal-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#v-paypal"
+								type="button" role="tab">PayPal
+							</button>
+							<button class="nav-link mb-1 text-start"
+								id="v-cash-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#v-cash"
+								type="button" role="tab">Cash Deposit (Barzahlen/Cash26)
+							</button>
+							<button class="nav-link text-start"
+								id="v-fintech-tab"
+								data-bs-toggle="pill"
+								data-bs-target="#v-fintech"
+								type="button" role="tab">Fintech Wallets (Revolut/Wise)
+							</button>
 						</div>
 					</div>
 				</div>
 
-				<!-- Sidebar Info -->
-				<div class="col-lg-4">
-					<div class="card mb-4">
-						<div class="card-header">
-							<h6 class="mb-0">Deposit Information</h6>
-						</div>
-						<div class="card-body">
-							<div class="mb-3">
-								<small class="text-muted d-block mb-1">Processing Time</small>
-								<p class="mb-0">Fast and secure</p>
-							</div>
-							<div class="mb-3">
-								<small class="text-muted d-block mb-1">Transaction Fee</small>
-								<p class="mb-0">€5.00</p>
-							</div>
-							<div class="mb-3">
-								<small class="text-muted d-block mb-1">Minimum Deposit</small>
-								<p class="mb-0">€50.00</p>
-							</div>
-							<div>
-								<small class="text-muted d-block mb-1">Daily Limit</small>
-								<p class="mb-0">€100,000.00</p>
-							</div>
-						</div>
-					</div>
 
-					<div class="card border-primary mb-4">
-						<div class="card-body">
-							<div class="d-flex align-items-center gap-2 mb-2">
-								<i class="bi bi-info-circle-fill text-primary"></i>
-								<h6 class="mb-0">Important Notice</h6>
-							</div>
-							<p class="small mb-0">All deposits are secured with bank-level encryption. Funds will be available for
-								trading once the transaction is confirmed.</p>
-						</div>
-					</div>
-
-					<?php if ( count($Controller->Deposits()) > 0 ) { ?>
-					<div class="card">
-						<div class="card-header">
-							<h6 class="mb-0">Recent Deposits</h6>
-						</div>
-						<div class="card-body p-0">
-							<div class="list-group list-group-flush">
-								<?php
-								foreach ($Controller->Deposits(5) as $key => $value) {
-								?>
-								<div class="list-group-item">
-									<div class="d-flex justify-content-between align-items-center">
-										<div>
-											<div class="fw-medium">$<?php echo number_format($value['amount'], ) ?></div>
-											<small class="text-muted"><?php echo date('M d, Y', strtotime($value['createdat'])) ?></small>
-										</div>
-										<?php
-										switch ($value['status']) {
-											case 'success':
-												?><span class="badge bg-success-subtle text-success">Completed</span><?php
-											break;
-											case 'failed':
-												?><span class="badge bg-danger-subtle text-danger">Failed</span><?php
-											break;
-											default:
-												?><span class="badge bg-warning-subtle text-warning">Pending</span><?php
-											break;
-										}
-										?>
+				<!-- Tab Content -->
+				<div class="col-md-8">
+					<div class="tab-content" id="deposit-tabContent">
+						<!-- SEPA Transfer -->
+						<div class="tab-pane fade show active" id="v-sepa" role="tabpanel">
+							<div class="card p-4">
+								<h5 class="mb-3">SEPA Bank Transfer</h5>
+								<p class="small">Transfer funds directly from your EU bank account using SEPA. It usually takes 1-2 business days.</p>
+								<form>
+									<div class="mb-3">
+										<label class="form-label">IBAN</label>
+										<input type="text" class="form-control" placeholder="DE89 3704 0044 0532 0130 00">
 									</div>
-								</div>
-								<?php
-								}
-								?>
+									<div class="mb-3">
+										<label class="form-label">BIC / SWIFT</label>
+										<input type="text" class="form-control" placeholder="COBADEFFXXX">
+									</div>
+									<div class="mb-3">
+										<label class="form-label">Amount (€)</label>
+										<input type="number" class="form-control" min="1" step="0.01">
+									</div>
+									<button type="submit" class="btn btn-primary">Generate Deposit Instructions</button>
+								</form>
 							</div>
 						</div>
+
+
+						<!-- SEPA Instant -->
+						<div class="tab-pane fade" id="v-sepa-instant" role="tabpanel">
+							<div class="card p-4">
+								<h5 class="fw-bold mb-3">SEPA Instant Transfer</h5>
+								<p>Send money instantly between supported EU banks (under 10 seconds).</p>
+								<form>
+									<div class="mb-3">
+										<label class="form-label">IBAN</label>
+										<input type="text" class="form-control" placeholder="DE89 3704 0044 0532 0130 00">
+									</div>
+									<div class="mb-3">
+										<label class="form-label">Amount (€)</label>
+										<input type="number" class="form-control" min="1" step="0.01">
+									</div>
+									<button class="btn btn-success">Confirm Instant Transfer</button>
+								</form>
+							</div>
+						</div>
+
+
+						<!-- Giropay -->
 					</div>
-					<?php } ?>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Mobile Bottom Navigation -->
-	<?php include 'inc/mobile-menu.php'; ?>
+		<!-- Mobile Bottom Navigation -->
+		<?php include 'inc/mobile-menu.php'; ?>
 
-	<script src="assets/global/js/jquery.min.js"></script>
-	<script src="assets/vendor/mckenziearts/laravel-notify/js/notify.js"></script>
-	<script src="../js/forms.js"></script>
-	<script>
-		$(document).ready(function() {
-			$('#depositAccount').on('change', function() {
-				const selectedMethod = $("#depositAccount option:selected");
-				const name = selectedMethod.val();
-				const wallet_address = selectedMethod.data('address');
-				const qrcode = selectedMethod.data('code');
-				$('#showWalletInfo').show();
-				if (qrcode) {
-					$('#showWalletInfo #img').show();
-					$("#showWalletInfo img").attr('src', `../assets/images/wallets/${qrcode}`);
-				}else {
-					$('#showWalletInfo #img').hide();
-				}
-				$('#depositWallet').val(wallet_address);
-				$("#coinInfo").html(`Send only ${name} to this wallet, sending other currencies might cause delay!`)
+		<script src="assets/global/js/jquery.min.js"></script>
+		<script src="assets/vendor/mckenziearts/laravel-notify/js/notify.js"></script>
+		<script src="../js/forms.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('#depositAccount').on('change', function () {
+					const selectedMethod = $("#depositAccount option:selected");
+					const name = selectedMethod.val();
+					const wallet_address = selectedMethod.data('address');
+					const qrcode = selectedMethod.data('code');
+					$('#showWalletInfo').show();
+					if (qrcode) {
+						$('#showWalletInfo #img').show();
+						$("#showWalletInfo img").attr('src', `../assets/images/wallets/${qrcode}`);
+					} else {
+						$('#showWalletInfo #img').hide();
+					}
+					$('#depositWallet').val(wallet_address);
+					$("#coinInfo").html(`Send ${name} to this wallet, sending other crypto might cause delay!`)
+				});
 			});
-		});
-	</script>
-	<script src="assets/js/theme.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+			// Copy to clipboard function
+			function copyInput() {
+				const input = document.getElementById("depositWallet");
+				input.select();
+				input.setSelectionRange(0, 99999); // for mobile devices
+				navigator.clipboard.writeText(input.value)
+					.then(() => notifySuccess("Copied to clipboard"))
+					.catch(err => console.error("Copy failed:", err));
+			}
+		</script>
+		<script src="assets/js/theme.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

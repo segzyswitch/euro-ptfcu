@@ -136,76 +136,6 @@ if ( isset($_POST["add_account"]) ) {
   }
 }
 
-// Add plan
-if ( isset($_POST['new_plan']) ) {
-  $name = filter_var($_POST['name'], FILTER_SANITIZE_SPECIAL_CHARS);
-  $duration = filter_var($_POST['duration'], FILTER_SANITIZE_SPECIAL_CHARS);
-  $interest = filter_var($_POST['interest'], FILTER_SANITIZE_SPECIAL_CHARS);
-  $min_limit = filter_var($_POST['min_limit'], FILTER_SANITIZE_SPECIAL_CHARS);
-  $max_limit = filter_var($_POST['max_limit'], FILTER_SANITIZE_SPECIAL_CHARS);
-  $desc = filter_var($_POST['desc'], FILTER_SANITIZE_SPECIAL_CHARS);
-  $recomend = 0;
-  if (isset($_POST['recomend'])) $recomend = 1;
-
-  $sql = "INSERT INTO plans(name, interest, duration, min_limit,
-    max_limit, recomend, description)
-  VALUES('$name', '$interest', '$duration', '$min_limit',
-    '$max_limit', '$recomend', '$desc')";
-  $query = $conn->prepare($sql);
-
-  try {
-    $query->execute();
-    echo "New plan <b>".$name."</b> has been added successfully.";
-  } catch (PDOException $e) {
-    echo $e->getMessage();
-  }
-}
-// edit plan
-if ( isset($_POST['edit_plan']) ) {
-  $plan_id = $_POST['edit_plan'];
-  $name = filter_var($_POST['name'], FILTER_SANITIZE_SPECIAL_CHARS);
-  $duration = filter_var($_POST['duration'], FILTER_SANITIZE_SPECIAL_CHARS);
-  $interest = filter_var($_POST['interest'], FILTER_SANITIZE_SPECIAL_CHARS);
-  $min_limit = filter_var($_POST['min_limit'], FILTER_SANITIZE_SPECIAL_CHARS);
-  $max_limit = filter_var($_POST['max_limit'], FILTER_SANITIZE_SPECIAL_CHARS);
-  $desc = filter_var($_POST['desc'], FILTER_SANITIZE_SPECIAL_CHARS);
-  $recomend = 0;
-  if (isset($_POST['recomend'])) $recomend = 1;
-
-  $sql = "UPDATE plans
-    SET name='$name',
-    interest = '$interest',
-    duration = '$duration',
-    min_limit = '$min_limit',
-    max_limit = '$max_limit',
-    description = '$desc'
-    WHERE id = '$plan_id'";
-  $query = $conn->prepare($sql);
-
-  try {
-    $query->execute();
-    echo "Plan <b>".$name."</b> has been updated successfully.";
-  } catch (PDOException $e) {
-    echo $e->getMessage();
-  }
-}
-// delete plan
-if ( isset($_POST['delete_plan']) ) {
-  header('Content-Type: application/json');
-  $plan_id = $_POST['delete_plan'];
-  $sql = "DELETE FROM plans WHERE id = '$plan_id'";
-  $query = $conn->prepare($sql);
-  try {
-    $query->execute();
-    $response = [
-      'id' => $plan_id,
-      'message' => 'Plan deleted successfully'
-    ];
-    echo json_encode($response);
-  } catch (PDOException $e) {
-    echo $e->getMessage();
-  }
-}
 
 // update user status
 if ( isset($_GET['activate_user']) ) {
@@ -260,19 +190,21 @@ if ( isset($_POST['update_user']) ) {
   $state = filter_var($_POST["state"], FILTER_SANITIZE_SPECIAL_CHARS);
   $zip = filter_var($_POST["zip"], FILTER_SANITIZE_SPECIAL_CHARS);
   $status = filter_var($_POST["status"], FILTER_SANITIZE_SPECIAL_CHARS);
-  $wallet_bal = filter_var($_POST["wallet_bal"], FILTER_SANITIZE_SPECIAL_CHARS);
+  $current_bal = filter_var($_POST["current_bal"], FILTER_SANITIZE_SPECIAL_CHARS);
+  $savings_bal = filter_var($_POST["savings_bal"], FILTER_SANITIZE_SPECIAL_CHARS);
 
   // return false;
   $sql = "UPDATE users
-  SET fname = '$fname',
-  lname = '$lname',
+  SET firstname = '$fname',
+  lastname = '$lname',
   email = '$email',
   phone = '$phone',
-  address = '$address',
+  street_address = '$address',
   city = '$city',
   state = '$state',
-  zip = '$zip',
-  wallet_bal = '$wallet_bal',
+  zipcode = '$zip',
+  current_bal = '$current_bal',
+  savings_bal = '$savings_bal',
   status = '$status'
   WHERE id = '$user_id'";
 
@@ -544,6 +476,77 @@ if ( isset($_POST['delete_wallet']) ) {
     $response = [
       'id' => $wallet_id,
       'message' => 'Wallet deleted successfully'
+    ];
+    echo json_encode($response);
+  } catch (PDOException $e) {
+    echo $e->getMessage();
+  }
+}
+
+// Add plan
+if ( isset($_POST['new_plan']) ) {
+  $name = filter_var($_POST['name'], FILTER_SANITIZE_SPECIAL_CHARS);
+  $duration = filter_var($_POST['duration'], FILTER_SANITIZE_SPECIAL_CHARS);
+  $interest = filter_var($_POST['interest'], FILTER_SANITIZE_SPECIAL_CHARS);
+  $min_limit = filter_var($_POST['min_limit'], FILTER_SANITIZE_SPECIAL_CHARS);
+  $max_limit = filter_var($_POST['max_limit'], FILTER_SANITIZE_SPECIAL_CHARS);
+  $desc = filter_var($_POST['desc'], FILTER_SANITIZE_SPECIAL_CHARS);
+  $recomend = 0;
+  if (isset($_POST['recomend'])) $recomend = 1;
+
+  $sql = "INSERT INTO plans(name, interest, duration, min_limit,
+    max_limit, recomend, description)
+  VALUES('$name', '$interest', '$duration', '$min_limit',
+    '$max_limit', '$recomend', '$desc')";
+  $query = $conn->prepare($sql);
+
+  try {
+    $query->execute();
+    echo "New plan <b>".$name."</b> has been added successfully.";
+  } catch (PDOException $e) {
+    echo $e->getMessage();
+  }
+}
+// edit plan
+if ( isset($_POST['edit_plan']) ) {
+  $plan_id = $_POST['edit_plan'];
+  $name = filter_var($_POST['name'], FILTER_SANITIZE_SPECIAL_CHARS);
+  $duration = filter_var($_POST['duration'], FILTER_SANITIZE_SPECIAL_CHARS);
+  $interest = filter_var($_POST['interest'], FILTER_SANITIZE_SPECIAL_CHARS);
+  $min_limit = filter_var($_POST['min_limit'], FILTER_SANITIZE_SPECIAL_CHARS);
+  $max_limit = filter_var($_POST['max_limit'], FILTER_SANITIZE_SPECIAL_CHARS);
+  $desc = filter_var($_POST['desc'], FILTER_SANITIZE_SPECIAL_CHARS);
+  $recomend = 0;
+  if (isset($_POST['recomend'])) $recomend = 1;
+
+  $sql = "UPDATE plans
+    SET name='$name',
+    interest = '$interest',
+    duration = '$duration',
+    min_limit = '$min_limit',
+    max_limit = '$max_limit',
+    description = '$desc'
+    WHERE id = '$plan_id'";
+  $query = $conn->prepare($sql);
+
+  try {
+    $query->execute();
+    echo "Plan <b>".$name."</b> has been updated successfully.";
+  } catch (PDOException $e) {
+    echo $e->getMessage();
+  }
+}
+// delete plan
+if ( isset($_POST['delete_plan']) ) {
+  header('Content-Type: application/json');
+  $plan_id = $_POST['delete_plan'];
+  $sql = "DELETE FROM plans WHERE id = '$plan_id'";
+  $query = $conn->prepare($sql);
+  try {
+    $query->execute();
+    $response = [
+      'id' => $plan_id,
+      'message' => 'Plan deleted successfully'
     ];
     echo json_encode($response);
   } catch (PDOException $e) {

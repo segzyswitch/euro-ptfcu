@@ -1,7 +1,7 @@
 <!-- Desktop Sidebar -->
 <div class="sidebar d-none d-lg-flex flex-column">
 	<div class="w-100 mb-4 text-center">
-		<a href="../"><img src="../logo.png" height="65" /></a>
+		<a href="../"><img src="../logo.png" class="logo--img" height="65" /></a>
 	</div>
 	<nav class="sidebar-nav pt-2" style="overflow-y:auto;">
 		<?php include 'sidebar-links.php' ?>
@@ -16,7 +16,6 @@
 <script>
   // Get current URL path
   const currentPage = window.location.pathname.split("/").pop();
-	// alert(currentPage);
 
   // Loop through links
   document.querySelectorAll(".sidebar-nav a").forEach(link => {

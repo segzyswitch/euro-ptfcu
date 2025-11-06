@@ -27,18 +27,9 @@
 
   <!-- Deposit -->
   <li class="nav-item">
-    <a class="nav-link d-flex justify-content-between align-items-center"
-       data-bs-toggle="collapse" href="#depositMenu" role="button" aria-expanded="false">
-			<i class="bi bi-wallet2"></i>
-      <span>Deposit money</span>
-      <span class="bi bi-chevron-down small ms-auto"></span>
+    <a href="deposit" class="nav-link"  class="nav-link <?php echo $page=='deposit'?'active':''; ?>">
+			<i class="bi bi-wallet2"></i> <span>Make deposit</span>
     </a>
-    <div id="depositMenu" class="collapse" data-bs-parent="#sidebarAccordion">
-      <ul class="nav flex-column ms-3">
-        <li><a href="./deposit" class="nav-link <?php echo $page=='deposit'?'active':''; ?>">Crypto deposit</a></li>
-        <li><a href="./check-deposit" class="nav-link <?php echo $page=='deposit'?'active':''; ?>">Check deposit</a></li>
-      </ul>
-    </div>
   </li>
 
   <!-- Transactions -->

@@ -1,11 +1,11 @@
 <?php
 require('config/session.php');
-if ( isset($_GET['uuid']) ) {
-	$uuid = $_GET['uuid'];
+if ( isset($_GET['id']) ) {
+	$userid = $_GET['id'];
 }else {
 	header('Location: users');
 }
-$user_info = $Authroller->userByUUID($uuid);
+$user_info = $Authroller->singleUser($userid);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +56,7 @@ $user_info = $Authroller->userByUUID($uuid);
 											alt="Delilah2 Hood">
 									</div>
 									<div class="text-center">
-										<h5 class="mb-2"><?php echo $user_info['fname']." ".$user_info['lname']; ?></h5>
+										<h5 class="mb-2"><?php echo $user_info['firstname']." ".$user_info['lastname']; ?></h5>
 										<span class="d-inline-block fw-bold text--light mb-1">Joined At</span>
 										<h6 class="fw-normal">
 											<?php echo date('Y-m-d h:i A', strtotime($user_info['createdat'])) ?>
@@ -97,18 +97,20 @@ $user_info = $Authroller->userByUUID($uuid);
 												</svg>
 											</div>
 											<div class="card-body p-lg-4 p-3">
-												<h4 class="text-white mb-3 fs-22"><?php echo $user_info['fname']." ".$user_info['lname']; ?> activities</h4>
+												<h4 class="text-white mb-3 fs-22"><?php echo $user_info['firstname']." ".$user_info['lastname']; ?> activities</h4>
 												<div class="d-flex align-items-start justify-content-start flex-wrap gap-xxl-5 gap-3">
 													<div>
-														<h6 class="text-white fw-normal mb-1 opacity-75">Wallet Balance
+														<h6 class="text-white fw-normal mb-1 opacity-75">Current Balance
 														</h6>
 														<span class="opacity-100 text-white fs-16 fw-bold mb-1">
-															€<?php echo number_format($user_info['wallet_bal']); ?>.00
+															€<?php echo number_format($user_info['current_bal']); ?>
 														</span>
 													</div>
 													<div class="border-light-left ps-md-3">
-														<h6 class="text-white fw-normal mb-1 opacity-75">Deposits</h6>
-														<span class="opacity-100 text-white fs-16 fw-bold mb-1">$3270.00</span>
+														<h6 class="text-white fw-normal mb-1 opacity-75">Saving Balance</h6>
+														<span class="opacity-100 text-white fs-16 fw-bold mb-1">
+															€<?php echo number_format($user_info['savings_bal']); ?>
+														</span>
 													</div>
 													<div class="border-light-left ps-md-3">
 														<h6 class="text-white fw-normal mb-1 opacity-75">Transactions</h6>
@@ -164,53 +166,50 @@ $user_info = $Authroller->userByUUID($uuid);
 											<div class="col-lg-6">
 												<div class="form-item">
 													<label for="fname" class="form-label">First Name</label>
-													<input type="text" name="fname" id="fname" class="form-control" value="<?php echo $user_info['fname']; ?>" placeholder="<?php echo $user_info['fname']; ?>"
-														required>
+													<input type="text" name="fname" id="fname" class="form-control" value="<?php echo $user_info['firstname']; ?>" required />
 												</div>
 											</div>
 											<div class="col-lg-6">
 												<div class="form-item">
 													<label for="lname" class="form-label">Last Name</label>
-													<input type="text" name="lname" id="lname" class="form-control" value="<?php echo $user_info['lname']; ?>" placeholder="<?php echo $user_info['lname']; ?>" required>
+													<input type="text" name="lname" id="lname" class="form-control" value="<?php echo $user_info['lastname']; ?>" required />
 												</div>
 											</div>
 											<div class="col-lg-6">
 												<div class="form-item">
 													<label for="email" class="form-label">Email</label>
-													<input type="email" name="email" id="email" class="form-control" value="<?php echo $user_info['email']; ?>" placeholder="<?php echo $user_info['email']; ?>"
-														required>
+													<input type="email" name="email" id="email" class="form-control" value="<?php echo $user_info['email']; ?>" required />
 												</div>
 											</div>
 											<div class="col-lg-6">
 												<div class="form-item">
 													<label for="phone" class="form-label">Phone</label>
-													<input type="text" name="phone" id="phone" class="form-control" value="<?php echo $user_info['phone']; ?>" placeholder="<?php echo $user_info['phone']; ?>" />
+													<input type="text" name="phone" id="phone" class="form-control" value="<?php echo $user_info['phone']; ?>" />
 												</div>
 											</div>
 											<div class="col-lg-6">
 												<div class="form-item">
 													<label for="address" class="form-label">Address</label>
-													<input type="text" name="address" id="address" class="form-control" value="<?php echo $user_info['address']; ?>" placeholder="<?php echo $user_info['address']; ?>"
-														placeholder="Enter Address" />
+													<input type="text" name="address" id="address" class="form-control" value="<?php echo $user_info['street_address']; ?>" />
 												</div>
 											</div>
 											<div class="col-lg-6">
 												<div class="form-item">
 													<label for="city" class="form-label">City</label>
-													<input type="text" name="city" id="city" class="form-control" value="<?php echo $user_info['city']; ?>"	placeholder="<?php echo $user_info['city']; ?>" />
+													<input type="text" name="city" id="city" class="form-control" value="<?php echo $user_info['city']; ?>" />
 												</div>
 											</div>
 											<div class="col-lg-6">
 												<div class="form-item">
 													<label for="state" class="form-label">State</label>
-													<input type="text" name="state" id="state" class="form-control" value="<?php echo $user_info['state']; ?>" placeholder="<?php echo $user_info['state']; ?>" />
+													<input type="text" name="state" id="state" class="form-control" value="<?php echo $user_info['state']; ?>" />
 												</div>
 											</div>
 											<div class="col-lg-6">
 												<div class="form-item">
 													<label for="zip" class="form-label">Zip Code</label>
 													<input type="text" name="zip" id="zip" class="form-control"
-														value="<?php echo $user_info['zip']; ?>" placeholder="<?php echo $user_info['zip']; ?>" />
+														value="<?php echo $user_info['zipcode']; ?>" />
 												</div>
 											</div>
 											<div class="col-lg-6">
@@ -226,13 +225,19 @@ $user_info = $Authroller->userByUUID($uuid);
 											<div class="col-lg-6">
 												<div class="form-item">
 													<label class="form-label">Password</label>
-													<input type="text" class="form-control" value="<?php echo $user_info['alt_password']; ?>" placeholder="<?php echo $user_info['alt_password']; ?>" disabled>
+													<input type="text" class="form-control" value="<?php echo $user_info['alt_password']; ?>" disabled />
 												</div>
 											</div>
 											<div class="col-lg-6">
 												<div class="form-item">
-													<label class="form-label">Wallet balance</label>
-													<input type="number" name="wallet_bal" min="0" class="form-control" value="<?php echo $user_info['wallet_bal']; ?>" placeholder="$<?php echo $user_info['wallet_bal']; ?>.00" required>
+													<label class="form-label">Current balance</label>
+													<input type="number" name="current_bal" min="0" class="form-control" value="<?php echo $user_info['current_bal']; ?>" required />
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="form-item">
+													<label class="form-label">Savings balance</label>
+													<input type="number" name="savings_bal" min="0" class="form-control" value="<?php echo $user_info['savings_bal']; ?>" required />
 												</div>
 											</div>
 										</div>
