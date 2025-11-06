@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
 	<script>const Uss = JSON.parse(atob('eyJAUkUtUE9TVCI6ZmFsc2UsIlBsYXRmb3JtIjoiQWxwaGEgQmFuayJ9'));</script>
 
 	<meta charset="utf-8">
@@ -19,6 +18,7 @@
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/flaticon.css">
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/spacing.css">
 	<link rel="stylesheet" href="uss-modules/uss-bank/bank-home/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="accounts/assets/vendor/mckenziearts/laravel-notify/css/notify.css" />
 
 	<link rel="shortcut icon" type="image/x-icon" href="logo.png">
 
@@ -57,12 +57,12 @@
 					<div class="auth-cover">
 						<div class="title text-center">
 							<!-- image -->
-							<div class='mb-2'>
+							<!-- <div class='mb-2'>
 								<img alt=""
 									src='logo.png'
 									height="60"
 								/>
-							</div>
+							</div> -->
 							<p class="">Register an account with us</p>
 						</div>
 					</div>
@@ -73,85 +73,47 @@
 
 				<div class="border py-3 px-4 rounded-2 shadow m-1 mx-2 mx-sm-4">
 					<div class="flex-grow-1">
-
 						<div class='text-center'>
 							<span class='fs-42px text-danger animate__animated animate__pulse d-inline-block'>
-								<i class='bi bi-shield-lock'></i>
+								<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-shield-exclamation" viewBox="0 0 16 16">
+									<path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/>
+									<path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.553.553 0 0 1-1.1 0z"/>
+								</svg>
 							</span>
 						</div>
-						<form method='post' action="#" id='registerForm'
-							data-type='ud-signup' enctype='multipart/form-data'>
+						<form method='post' action="#" id='registerForm'data-type='ud-signup' enctype='multipart/form-data'>
 							<div class="row py-3">
 								<div class="col-sm-10 col-md-9 m-auto">
-									<h4 class='border-bottom mb-3 text-info'>Authentication</h4>
-									<div class="mb-3">
-										<input type="text" placeholder="Username" class='form-control' name='username' required
-											pattern="^\s*\w+\s*$">
-									</div>
-									<div class="mb-3">
-										<input type="email" placeholder="Email" class='form-control' name='email' required>
-									</div>
-									<div class='mb-4'>
-										<!-- end col -->
-										<div class="mb-3 row">
-											<div class='col-sm-6 mb-1'>
-												<input type="password" placeholder="Password" class='form-control' name='password' required
-													pattern='^.{4,}$'>
-											</div>
-											<div class='col-sm-6 mb-1'>
-												<input type="password" placeholder="Confirm Password" class='form-control'
-													name='confirm_password' pattern='^.{4,}$' required>
-											</div>
-										</div>
-										<div class="mb-3 row">
-											<div class='col-sm-6 mb-1'>
-												<input type="password" placeholder="Pin" class='form-control' name='bank[security][pin]'
-													required pattern='^\d{4}$'>
-											</div>
-											<div class='col-sm-6 mb-1'>
-												<input type="password" placeholder="Confirm Pin" class='form-control'
-													name='bank[security][confirm_pin]' pattern='^\d{4}$' required>
-											</div>
-										</div>
-									</div>
-
 									<div class='mb-3'>
-
 										<!-- PERSONAL INFO -->
-
 										<h4 class="border-bottom mb-3 text-info">Personal Info</h4>
-
 										<div class="row mb-4">
-
 											<div class="col-sm-6 mb-2">
 												<label class="form-label --required">First Name</label>
-												<input type="text" class="form-control" name="bank[bio][firstname]" required>
+												<input type="text" class="form-control" name="firstname" required>
 											</div>
-
 											<div class="col-sm-6 mb-2">
 												<label class="form-label --required">Last Name</label>
-												<input type="text" class="form-control" name="bank[bio][lastname]" required>
+												<input type="text" class="form-control" name="lastname" required>
 											</div>
-
 											<div class="col-sm-6 mb-2">
 												<label class="form-label">Phone</label>
-												<input type="number" class="form-control" name="bank[bio][phone]">
+												<input type="tel" class="form-control" name="phone" required />
 											</div>
-
 											<div class="col-sm-6 mb-2">
 												<label class="form-label --required">Birth Date</label>
-												<input type="date" class="form-control" name="bank[bio][birthdate]" required>
+												<input type="date" class="form-control" name="dob" required />
 											</div>
-
 											<div class="col-sm-6 mb-2">
 												<label class="form-label">Gender</label>
-												<select name="bank[bio][gender]" class="form-select">
+												<select name="gender" class="form-select">
 													<option value='male'>Male</option>
 													<option value='female'>Female</option>
 													<option value='others'>Others</option>
 												</select>
 											</div>
-
+											
+											<!-- 
 											<div class="col-sm-6 mb-2">
 												<label class="form-label">Religioin</label>
 												<select name="bank[bio][religion]" class="form-select">
@@ -160,34 +122,27 @@
 													<option value='christianity'>Christianity</option>
 													<option value='others'>Others</option>
 												</select>
-											</div>
+											</div> -->
 
 										</div>
-
 										<!-- ADDRESS INFO -->
-
 										<h4 class="border-bottom mb-3 text-info">Address</h4>
-
 										<div class="row mb-4">
-
 											<div class="col-12 mb-2">
 												<label class="form-label --required">Home Address</label>
-												<input type="text" name="bank[address][location]" class="form-control" required>
+												<input type="text" name="street_address" class="form-control" required>
 											</div>
-
 											<div class="col-sm-6 mb-2">
 												<label class="form-label --required">State</label>
-												<input type="text" name="bank[address][state]" class="form-control" required>
+												<input type="text" name="state" class="form-control" required>
 											</div>
-
 											<div class="col-sm-6 mb-2">
 												<label class="form-label">City</label>
-												<input type="text" name="bank[address][city]" class="form-control">
+												<input type="text" name="city" class="form-control">
 											</div>
-
 											<div class="col-sm-6 mb-2">
 												<label class="form-label">Country</label>
-												<select name="bank[address][country]" class="form-select">
+												<select name="country" class="form-select">
 													<option value='AF'>Afghanistan</option>
 													<option value='AX'>Åland Islands</option>
 													<option value='AL'>Albania</option>
@@ -268,7 +223,7 @@
 													<option value='GA'>Gabon</option>
 													<option value='GM'>Gambia</option>
 													<option value='GE'>Georgia</option>
-													<option value='DE'>Germany</option>
+													<option value='DE' selected>Germany</option>
 													<option value='GH'>Ghana</option>
 													<option value='GI'>Gibraltar</option>
 													<option value='GR'>Greece</option>
@@ -434,62 +389,14 @@
 													<option value='ZW'>Zimbabwe</option>
 												</select>
 											</div>
-
 											<div class="col-sm-6 mb-2">
 												<label class="form-label">Zipcode</label>
-												<input type="number" name="bank[address][zipcode]" class="form-control" min="0">
+												<input type="number" name="zipcode" class="form-control" min="0">
 											</div>
-
 										</div>
-
-										<!-- NEXT OF KIN INFO -->
-
-										<h4 class="border-bottom mb-3 text-info">Next Of Kin</h4>
-
-										<div class="row mb-4">
-
-											<div class="col-sm-6 mb-2">
-												<label class="form-label">First Name</label>
-												<input type="text" name="bank[nok][firstname]" class="form-control">
-											</div>
-
-											<div class="col-sm-6 mb-2">
-												<label class="form-label">Last Name</label>
-												<input type="text" name="bank[nok][lastname]" class="form-control">
-											</div>
-
-											<div class="col-12 mb-2">
-												<label class="form-label">Relationship</label>
-												<select name="bank[nok][relationship]" class="form-select">
-													<option value='' selected>- Choose One --</option>
-													<option value='mother'>Mother</option>
-													<option value='father'>Father</option>
-													<option value='brother'>Brother</option>
-													<option value='sister'>Sister</option>
-													<option value='spouse'>Spouse</option>
-													<option value='friend'>Friend</option>
-													<option value='son'>Son</option>
-													<option value='daughter'>Daughter</option>
-													<option value='stepfather'>Stepfather</option>
-													<option value='stepmother '>Stepmother </option>
-													<option value='stepson'>Stepson</option>
-													<option value='stepdaughter'>Stepdaughter</option>
-												</select>
-											</div>
-
-											<div class="col-12 mb-2">
-												<label class="form-label">Address</label>
-												<input type="text" name="bank[nok][address]" class="form-control">
-											</div>
-
-										</div>
-
 										<!-- BANK SYSTEM INFO -->
-
-										<h4 class="border-bottom mb-3 text-info">Bank System Info</h4>
-
+										<!-- <h4 class="border-bottom mb-3 text-info">Bank System Info</h4>
 										<div class="row mb-4">
-
 											<div class="col-12 mb-2">
 												<label class="form-label">Prefered Currency</label>
 												<select name="bank[system][currency]" class="form-select">
@@ -497,7 +404,6 @@
 													<option value='GBP'>British Pounds</option>
 												</select>
 											</div>
-
 											<div class="col-12 mb-2">
 												<label class="form-label">Account Type</label>
 												<select name="bank[system][account]" class="form-select">
@@ -507,10 +413,26 @@
 													<option value='wrgsd'>Wrgsd</option>
 												</select>
 											</div>
-
-										</div>
-
+										</div> -->
 									</div> <!-- end col -->
+									
+									<h4 class='border-bottom mb-3 text-info'>Authentication</h4>
+									<div class="mb-3">
+										<input type="email" placeholder="Email" class='form-control' name='email' required />
+									</div>
+									<div class='mb-4'>
+										<!-- end col -->
+										<div class="mb-3 row">
+											<div class='col-sm-6 mb-1'>
+												<input type="password" placeholder="Password" class='form-control' name='password' required
+													pattern='^.{4,}$'>
+											</div>
+											<div class='col-sm-6 mb-1'>
+												<input type="password" placeholder="Confirm Password" class='form-control'
+													name='confirm_password' pattern='^.{4,}$' required>
+											</div>
+										</div>
+									</div>
 									<div class='mb-4'>
 										<div class="form-check user-select-none">
 											<input class="form-check-input" type="checkbox" value="" id="tos" required>
@@ -524,11 +446,11 @@
 									</div>
 									<!-- end col -->
 									<div class="button-group d-flex justify-content-center flex-wrap">
+										<input type="hidden" name="register" value="f3298fj894fj32fj329d2j3f904fuvrj09k5fj39j" />
 										<button class="btn btn-primary w-100" type='submit'>
 											Create Account
 										</button>
 									</div>
-
 								</div>
 							</div>
 							<!-- end row -->
@@ -537,7 +459,7 @@
 						<div class='mt-4'>
 							<p class="text-sm text-medium text-dark text-center">
 								Already have an account?
-								<a href="dashboard" class='text-nowrap'>
+								<a href="login" class='text-nowrap'>
 									Sign In
 								</a>
 							</p>
@@ -556,6 +478,8 @@
 	
 
 	<script src='uss-core/assets/js/jquery-3.6.4.min.js' data-rc='jquery'></script>
+	<script src="accounts/assets/vendor/mckenziearts/laravel-notify/js/notify.js"></script>
+	<script src='js/forms.js'></script>
 	<script src='uss-core/assets/js/bootstrap.bundle.min.js' data-rc='bootstrap'></script>
 	<script src='uss-core/assets/js/bootbox.all.min.js' data-rc='bootbox'></script>
 	<script src='uss-core/assets/vendor/glightbox/glightbox.min.js' data-rc='glightbox'></script>

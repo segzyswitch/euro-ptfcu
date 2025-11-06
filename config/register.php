@@ -1,7 +1,7 @@
 <?php
 session_start();
 require "../config/Controller.php";
-ini_set('SMTP', 'velloxawealth.com');
+ini_set('SMTP', 'reichsburgbanks.com');
 ini_set('smtp_port', 465);
 
 $Controller = new Controller;
@@ -25,10 +25,17 @@ function generateUniqueId($length = 10) {
 // ADD NEW USER ACCOUNT
 if ( isset($_POST["register"]) ) {
   // $admin_key = 'MASTER_ADMIN';
-  $fname = filter_var($_POST["fname"], FILTER_SANITIZE_SPECIAL_CHARS);
-  $lname = filter_var($_POST["lname"], FILTER_SANITIZE_SPECIAL_CHARS);
+  $fname = filter_var($_POST["firstname"], FILTER_SANITIZE_SPECIAL_CHARS);
+  $lname = filter_var($_POST["lastname"], FILTER_SANITIZE_SPECIAL_CHARS);
   $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
   $phone = filter_var($_POST["phone"], FILTER_SANITIZE_SPECIAL_CHARS);
+  $dob = filter_var($_POST["dob"], FILTER_SANITIZE_SPECIAL_CHARS);
+  $gender = filter_var($_POST["gender"], FILTER_SANITIZE_SPECIAL_CHARS);
+  $street_address = filter_var($_POST["street_address"], FILTER_SANITIZE_SPECIAL_CHARS);
+  $city = filter_var($_POST["city"], FILTER_SANITIZE_SPECIAL_CHARS);
+  $state = filter_var($_POST["state"], FILTER_SANITIZE_SPECIAL_CHARS);
+  $country = filter_var($_POST["country"], FILTER_SANITIZE_SPECIAL_CHARS);
+  $zipcode = filter_var($_POST["zipcode"], FILTER_SANITIZE_SPECIAL_CHARS);
   $password = filter_var($_POST["password"], FILTER_SANITIZE_SPECIAL_CHARS);
   $confirm_password = filter_var($_POST["confirm_password"], FILTER_SANITIZE_SPECIAL_CHARS);
   // GENERATE 4 RANDOM NUMBERS WITH LAST SIX OF TIME FUNCTION
@@ -41,9 +48,6 @@ if ( isset($_POST["register"]) ) {
   substr($make_uuid, 4, 4) . '-' . 
   substr($make_uuid, 8, 4) . '-' . 
   substr($make_uuid, 12, 4);
-
-  if ( isset($_POST['referral']) ) $referral = $_POST['referral'];
-  else $referral = NULL;
 
   // check if email exists
   $checkmail = $conn->prepare("SELECT * FROM users WHERE email='$email'");
@@ -58,8 +62,14 @@ if ( isset($_POST["register"]) ) {
     return false;
   }
   // validate password
-  $sql = "INSERT INTO users(uuid, fname, lname, email, phone, password, alt_password, referral)
-    VALUES('$uuid', '$fname', '$lname', '$email', '$phone', '$hashpwd', '$password', '$referral')
+  $sql = "INSERT INTO users(uuid, firstname, lastname, email,
+    dob, gender, street_address,
+    city, state, country, zipcode,
+    phone, password, alt_password)
+    VALUES('$uuid', '$fname', '$lname', '$email',
+    '$dob', '$gender', '$street_address',
+    '$city', '$state', '$country', '$zipcode',
+    '$phone', '$hashpwd', '$password')
   ";
   $query = $conn->prepare($sql);
 
@@ -69,7 +79,7 @@ if ( isset($_POST["register"]) ) {
       <html>
       <head>
         <meta charset='utf-8'>
-        <title>Activate Your Account | Velloxa Wallet</title>
+        <title>Activate Your Account | Reichsburg Banks</title>
         <meta name='viewport' content='width=device-width,initial-scale=1'>
         <style>
           /* Some clients ignore style tags — important styles are inline below.
@@ -93,11 +103,9 @@ if ( isset($_POST["register"]) ) {
                     <table role='presentation' width='100%' cellpadding='0' cellspacing='0'>
                       <tr>
                         <td align='left' style='vertical-align:middle;'>
-                          <!-- Replace src below with your logo URL; you said you'll add the logo yourself -->
-                          <!-- Example: <img src='{{LOGO_URL}}' alt='Company logo' width='120' style='display:block;'> -->
                           <div style='width:140px; height:38px; background:#0f0f10; border-radius:4px; display:inline-block; padding:5px 7.5px;display:flex;'>
                             <!-- Logo placeholder - replace with <img> -->
-                            <img src='https://velloxawealth.com/icon-0.png' width='70' />
+                            <img src='https://images.reichsburgbanks.com/logo.png' height='50' />
                           </div>
                         </td>
                         <td align='right' style='vertical-align:middle; font-size:13px; color:#9b9b9b;'>
@@ -120,7 +128,7 @@ if ( isset($_POST["register"]) ) {
                       <tr>
                         <td>
                           <h4 style='color:#ccc; font-weight:700;'>Hello, ".$fname." ".$lname."</h4>
-                          <p style='font-size:14px; line-height:20px; color:#d3d3d3;'>Welcome to Reichsburg Banks platform! We're excited to have you on board. To complete your registration and activate your account, please confirm your email address by clicking the link below:</p>
+                          <p style='font-size:14px; line-height:20px; color:#d3d3d3;'>Welcome to Reichsburg Banks! We're excited to have you on board. To complete your registration and activate your account, please confirm your email address by clicking the link below:</p>
                         </td>
                       </tr>
                       <!-- Withdrawal details box -->
@@ -130,7 +138,7 @@ if ( isset($_POST["register"]) ) {
                             <!-- Dashboard button -->
                             <tr>
                               <td style='padding-top:6px;padding-bottom:15px;'>
-                                <a href='https://velloxawealth.com/activate-account?uuid=".$uuid."' style='display:inline-block; padding:11px 18px; border-radius:6px; background:#b88b15; color:#0b0b0b; font-weight:700; font-size:14px;'>
+                                <a href='https://reichsburgbanks.com/activate-account?uuid=".$uuid."' style='display:inline-block; padding:11px 18px; border-radius:6px; background:#b88b15; color:#0b0b0b; font-weight:700; font-size:14px;'>
                                   Activate account
                                 </a>
                               </td>
@@ -138,7 +146,7 @@ if ( isset($_POST["register"]) ) {
                             <tr>
                               <td>
                                 <p style='font-size:14px; line-height:20px; color:#9a9a9a;'>If the button above doesn't work, please copy and paste the following link into your browser:</p>
-                                <p style='font-size:14px; line-height:20px; color:#efefef;'><a href='https://velloxawealth.com/activate-account?uuid=".$uuid."'>https://velloxawealth.com/activate-account?uuid=".$uuid."</a></p>
+                                <p style='font-size:14px; line-height:20px; color:#efefef;'><a href='https://reichsburgbanks.com/activate-account?uuid=".$uuid."'>https://reichsburgbanks.com/activate-account?uuid=".$uuid."</a></p>
                               </td>
                             </tr>
                           </table>
@@ -148,7 +156,7 @@ if ( isset($_POST["register"]) ) {
                       <tr>
                         <td style='border-top:1px solid rgba(255,255,255,0.04); padding-top:14px;'>
                           <p style='margin:0; font-size:13px; color:#9a9a9a; line-height:19px;'>For security reasons, this link will expire in 24 hours. If you did not sign up for an account with us, please ignore this email.</p>
-                          <p style='margin:10px 0 0 0; font-size:13px; color:#9a9a9a; line-height:19px;'>If you have any questions or need help, feel free to contact our support team at contact@velloxawealth.com</p>
+                          <p style='margin:10px 0 0 0; font-size:13px; color:#9a9a9a; line-height:19px;'>If you have any questions or need help, feel free to contact our support team at contact@reichsburgbanks.com</p>
                           <p style='margin:10px 0 0 0; font-size:12px; color:#777; font-style:italic;'>
                             This is an automated message, please do not reply.
                           </p>
@@ -178,16 +186,16 @@ if ( isset($_POST["register"]) ) {
       </html>
     ";
     $subject = "Confirm Your Account - Reichsburg Banks";
-    $headers = "From: Reichsburg Banks <support@velloxawealth.com>\r\n";
-    $headers .= "Reply-To: Reichsburg Banks <support@velloxawealth.com>\r\n";
-    $headers .= "Return-Path: support@velloxawealth.com\r\n";
+    $headers = "From: Reichsburg Banks <support@reichsburgbanks.com>\r\n";
+    $headers .= "Reply-To: Reichsburg Banks <support@reichsburgbanks.com>\r\n";
+    $headers .= "Return-Path: support@reichsburgbanks.com\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-    if ( mail($email, $subject, $message, $headers) ) {
+    // if ( mail($email, $subject, $message, $headers) ) {
       $query->execute();
       echo "Registration successful! We sent you a verification link, please follow the link to verify your account.";
-    }
+    // }
   } catch (PDOException $e) {
     echo $e->getMessage();
   }

@@ -130,7 +130,7 @@ if (isset($_SESSION["reichs_account_id"]) && isset($_SESSION["accnt_status"])) {
 						<div class="mt-2">
 							<p class="text-sm text-center">
 								Don't have an account yet?
-								<a href="dashboard/signup" class='text-nowrap'>Create an account</a>
+								<a href="signup" class='text-nowrap'>Create an account</a>
 							</p>
 						</div>
 

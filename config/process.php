@@ -112,7 +112,7 @@ if ( isset($_POST["user_login"]) ) {
 
     if ( password_verify($paswrd, $conf_row["password"]) ) {
       if ( $conf_row["status"] == 'pending' ) {
-        echo "Account not verified!";
+        echo "Account not verified, check your email to confirm your account!";
         return false;
       }else if ( $conf_row["status"] == 'locked' ) {
         echo 'Your account has been locked due to suspicious activities, contact <a href="tel:+19166108819">+19166108819</a> or send a mail to <a href="mailto:contact@aaveinvestment.com">contact@aaveinvestment.com</a>';
