@@ -1,9 +1,5 @@
 <?php
 require '../config/session.php';
-$linkedUser = null;
-if ( count($Controller->linkedAccounts('joint')) > 0 ) {
-	$linkedUser = $Controller->linkedAccounts('joint')[0];
-}
 ?>
 
 
@@ -42,13 +38,8 @@ if ( count($Controller->linkedAccounts('joint')) > 0 ) {
 							</button> -->
 						</div>
 						<div class="flex-grow-1 text-center text-md-start">
-							<?php if ($linkedUser) { ?>
-							<h4 class="mb-1"><?php echo $user_info['fname'].' & '.$linkedUser['fname'].' '.$user_info['lname']; ?>!</h4>
-							<p class="text-muted mb-2">Joint account</p>
-							<?php } else { ?>
 							<h4 class="mb-1"><?php echo $Controller->fullName() ?></h4>
 							<p class="text-muted mb-2"><?php echo $user_info['email'] ?></p>
-							<?php } ?>
 							<div class="d-flex gap-2 justify-content-center justify-content-md-start">
 								<span class="badge bg-success">Verified</span>
 								<!-- <span class="badge bg-primary">Premium Member</span> -->
@@ -78,45 +69,23 @@ if ( count($Controller->linkedAccounts('joint')) > 0 ) {
 								<div class="row g-3">
 									<div class="col-md-6">
 										<label for="firstName" class="form-label">First Name</label>
-										<?php if ($linkedUser) { ?>
-										<div class="input-group">
-											<input type="text" name="fname" class="form-control" id="firstName" value="<?php echo $user_info['fname'] ?>" disabled style="opacity:.7;" />
-											<input type="text" class="form-control text-center" id="firstName" value="$" disabled style="opacity:.7;max-width:45px;" />
-											<input type="text" class="form-control" id="firstName" value="<?php echo $linkedUser['fname'] ?>" disabled style="opacity:.7;" />
-										</div>
-										<?php } else { ?>
-										<input type="text" name="fname" class="form-control" id="firstName" value="<?php echo $user_info['fname'] ?>" disabled style="opacity:.7;" />
-										<?php } ?>
+										<input type="text" name="fname" class="form-control" id="firstName" value="<?php echo $user_info['firstname'] ?>" disabled style="opacity:.7;" />
 									</div>
 									<div class="col-md-6">
 										<label for="lastName" class="form-label">Last Name</label>
-										<input type="text" name="lname" class="form-control" id="lastName" value="<?php echo $user_info['lname'] ?>" disabled style="opacity:.7;" />
+										<input type="text" name="lname" class="form-control" id="lastName" value="<?php echo $user_info['lastname'] ?>" disabled style="opacity:.7;" />
 									</div>
 									<div class="col-md-6">
 										<label for="email" class="form-label">Email</label>
-										<?php if ($linkedUser) { ?>
-										<div class="input-group">
-											<input type="email" name="email" class="form-control" id="email" value="<?php echo $user_info['email'] ?>" disabled style="opacity:.7;" />
-											<input type="email" name="email" class="form-control" id="email" value="<?php echo $linkedUser['email'] ?>" disabled style="opacity:.7;" />
-										</div>
-										<?php } else { ?>
 										<input type="email" name="email" class="form-control" id="email" value="<?php echo $user_info['email'] ?>" disabled style="opacity:.7;" />
-										<?php } ?>
 									</div>
 									<div class="col-md-6">
 										<label for="phone" class="form-label">Phone</label>
-										<?php if ($linkedUser) { ?>
-										<div class="input-group">
-											<input type="tel" name="phone" class="form-control" value="<?php echo $user_info['phone'] ?>" disabled style="opacity:.7;" />
-											<input type="tel" name="phone" class="form-control" value="<?php echo $user_info['phone'] ?>" disabled style="opacity:.7;" />
-										</div>
-										<?php } else { ?>
 										<input type="tel" name="phone" class="form-control" id="phone" value="<?php echo $user_info['phone'] ?>" disabled style="opacity:.7;" />
-										<?php } ?>
 									</div>
 									<div class="col-12">
 										<label for="address" class="form-label">Address</label>
-										<input type="text" name="address" class="form-control" value="<?php echo $user_info['address'] ?>" disabled style="opacity:.7;">
+										<input type="text" name="address" class="form-control" value="<?php echo $user_info['street_address'] ?>" disabled style="opacity:.7;">
 									</div>
 									<div class="col-md-6">
 										<label for="city" class="form-label">City</label>
@@ -128,7 +97,7 @@ if ( count($Controller->linkedAccounts('joint')) > 0 ) {
 									</div>
 									<div class="col-md-2">
 										<label for="zip" class="form-label">ZIP</label>
-										<input type="text" name="zip" class="form-control" value="<?php echo $user_info['zip'] ?>" disabled style="opacity:.7;">
+										<input type="text" name="zip" class="form-control" value="<?php echo $user_info['zipcode'] ?>" disabled style="opacity:.7;">
 									</div>
 									<!-- <div class="col-12">
 										<label for="zip" class="form-label">Password</label>
@@ -223,16 +192,16 @@ if ( count($Controller->linkedAccounts('joint')) > 0 ) {
 						</div>
 						<div class="card-body">
 							<div class="mb-3">
-								<small class="text-muted d-block mb-1">Total Portfolio Value</small>
+								<small class="text-muted d-block mb-1">Total balance</small>
 								<h5 class="mb-0"><?php echo $Controller->totalBalance() ?></h5>
 							</div>
 							<div class="mb-3">
-								<small class="text-muted d-block mb-1">Active Investments</small>
-								<h5 class="mb-0"><?php echo $Controller->runningTrades()['count'] ?></h5>
+								<small class="text-muted d-block mb-1">Savings balance</small>
+								<h5 class="mb-0">€<?php echo number_format($user_info['savings_bal'], 2) ?></h5>
 							</div>
 							<div class="mb-3">
-								<small class="text-muted d-block mb-1">Total Transactions</small>
-								<h5 class="mb-0"><?php echo count($Controller->Transactions(100)) ?></h5>
+								<small class="text-muted d-block mb-1">Current balance</small>
+								<h5 class="mb-0">€<?php echo number_format($user_info['current_bal'], 2) ?></h5>
 							</div>
 							<div>
 								<small class="text-muted d-block mb-1">Account Status</small>

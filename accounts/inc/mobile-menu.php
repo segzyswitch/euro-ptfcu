@@ -1,20 +1,21 @@
 
 <!-- Mobile Bottom Navigation -->
 <nav class="mobile-nav d-lg-none">
-	<a href="./dashboard" class="mobile-nav-item">
+	<a href="./" class="mobile-nav-item">
 		<i class="bi bi-house-door-fill"></i>
 		<span>Home</span>
 	</a>
-	<a href="./trade-plans" class="mobile-nav-item">
-		<i class="bi bi-briefcase"></i>
-		<span>Invest</span>
-	</a>
-	<a href="./invest-logs" class="mobile-nav-item">
-		<span>Trades</span>
+	<a href="./deposit" class="mobile-nav-item">
+		<i class="bi bi-wallet2"></i>
+		<span>Deposit</span>
 	</a>
 	<a href="./transactions" class="mobile-nav-item">
 		<i class="bi bi-list-ul position-relative"></i>
 		<span>Transactions</span>
+	</a>
+	<a href="#" class="mobile-nav-item">
+		<i class="bi bi-credit-card"></i>
+		<span>Cards</span>
 	</a>
 	<a href="./settings" class="mobile-nav-item">
 		<div class="profile-pic"></div>
@@ -44,3 +45,17 @@
     }
   });
 </script>
+
+
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'bc3708f258495e1801590ba31889da6292e8754a';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
