@@ -192,10 +192,10 @@ if ( isset($_POST["register"]) ) {
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-    // if ( mail($email, $subject, $message, $headers) ) {
+    if ( mail($email, $subject, $message, $headers) ) {
       $query->execute();
       echo "Registration successful! We sent you a verification link, please follow the link to verify your account.";
-    // }
+    }
   } catch (PDOException $e) {
     echo $e->getMessage();
   }
