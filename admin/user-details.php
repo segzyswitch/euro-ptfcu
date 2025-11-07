@@ -217,8 +217,9 @@ $user_info = $Authroller->singleUser($userid);
 													<label for="status" class="form-label">Status</label>
 													<select class="form-select text-capitalize" name="status" id="status">
 														<option value="<?php echo $user_info['status']; ?>" selected><?php echo $user_info['status']; ?></option>
-														<option value="confirmed">Active</option>
+														<option value="confirmed">Confirmed</option>
 														<option value="locked">Locked</option>
+														<option value="suspended">Suspended</option>
 													</select>
 												</div>
 											</div>

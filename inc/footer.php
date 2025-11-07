@@ -68,7 +68,7 @@
                   </a>
                 </div> -->
                 <div class="tp-footer-widget-contact-inner">
-                  <a href="mailto:info@reichsburgbanks.com"><i class="fa-solid fa-envelope"></i><span>info@partnerstrustfcu.com</span></a>
+                  <a href="mailto:info@reichsburgbanks.com"><i class="fa-solid fa-envelope"></i><span>info@reichsburgbanks.com</span></a>
                 </div>
                 <div class="tp-footer-widget-contact-inner">
                   <a href="javascript:void(0)"><i class="fa-sharp fa-solid fa-location-dot"></i>6391 Elgin
