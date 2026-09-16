@@ -197,11 +197,11 @@ require '../config/session.php';
 							</div>
 							<div class="mb-3">
 								<small class="text-muted d-block mb-1">Savings balance</small>
-								<h5 class="mb-0">€<?php echo number_format($user_info['savings_bal'], 2) ?></h5>
+								<h5 class="mb-0">$<?php echo number_format($user_info['savings_bal'], 2) ?></h5>
 							</div>
 							<div class="mb-3">
 								<small class="text-muted d-block mb-1">Current balance</small>
-								<h5 class="mb-0">€<?php echo number_format($user_info['current_bal'], 2) ?></h5>
+								<h5 class="mb-0">$<?php echo number_format($user_info['current_bal'], 2) ?></h5>
 							</div>
 							<div>
 								<small class="text-muted d-block mb-1">Account Status</small>

@@ -103,13 +103,13 @@ $user_info = $Authroller->singleUser($userid);
 														<h6 class="text-white fw-normal mb-1 opacity-75">Current Balance
 														</h6>
 														<span class="opacity-100 text-white fs-16 fw-bold mb-1">
-															€<?php echo number_format($user_info['current_bal']); ?>
+															$<?php echo number_format($user_info['current_bal']); ?>
 														</span>
 													</div>
 													<div class="border-light-left ps-md-3">
 														<h6 class="text-white fw-normal mb-1 opacity-75">Saving Balance</h6>
 														<span class="opacity-100 text-white fs-16 fw-bold mb-1">
-															€<?php echo number_format($user_info['savings_bal']); ?>
+															$<?php echo number_format($user_info['savings_bal']); ?>
 														</span>
 													</div>
 													<div class="border-light-left ps-md-3">
@@ -124,25 +124,25 @@ $user_info = $Authroller->singleUser($userid);
 									<div class="col-xxl-3 col-xl-6 col-lg-4 col-md-6 col-sm-6">
 										<div class="bg--warning-light border--warning-top p-3 text-start">
 											<h5 class="text--warning mb-1 fs-12 fw-normal">Deposit</h5>
-											<h4 class="fs-18">€0.00</h4>
+											<h4 class="fs-18">$0.00</h4>
 										</div>
 									</div>
 									<div class="col-xxl-3 col-xl-6 col-lg-4 col-md-6 col-sm-6">
 										<div class="bg--primary-light border--primary-top p-3 text-start">
 											<h5 class="text--primary mb-1 fs-12 fw-normal">Investements</h5>
-											<h4 class="fs-18">€0.00</h4>
+											<h4 class="fs-18">$0.00</h4>
 										</div>
 									</div>
 									<div class="col-xxl-3 col-xl-6 col-lg-4 col-md-6 col-sm-6">
 										<div class="bg--success-light border--success-top p-3 text-start">
 											<h5 class="text--success mb-1 fs-12 fw-normal">Withdrawal</h5>
-											<h4 class="fs-18">€0.00</h4>
+											<h4 class="fs-18">$0.00</h4>
 										</div>
 									</div>
 									<div class="col-xxl-3 col-xl-6 col-lg-4 col-md-6 col-sm-6">
 										<div class="bg--danger-light border--danger-top p-3 text-start">
 											<h5 class="text--danger mb-1 fs-12 fw-normal">Referral Commission</h5>
-											<h4 class="fs-18">€0</h4>
+											<h4 class="fs-18">$0</h4>
 										</div>
 									</div>
 								</div>

@@ -108,7 +108,7 @@ require '../config/session.php';
 										<input type="text" class="form-control" placeholder="COBADEFFXXX">
 									</div>
 									<div class="mb-3">
-										<label class="form-label">Amount (€)</label>
+										<label class="form-label">Amount ($)</label>
 										<input type="number" class="form-control" min="1" step="0.01">
 									</div>
 									<button type="submit" class="btn btn-primary">Generate Deposit Instructions</button>
@@ -128,7 +128,7 @@ require '../config/session.php';
 										<input type="text" class="form-control" placeholder="DE89 3704 0044 0532 0130 00">
 									</div>
 									<div class="mb-3">
-										<label class="form-label">Amount (€)</label>
+										<label class="form-label">Amount ($)</label>
 										<input type="number" class="form-control" min="1" step="0.01">
 									</div>
 									<button class="btn btn-success">Confirm Instant Transfer</button>

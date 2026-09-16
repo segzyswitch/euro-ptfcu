@@ -64,8 +64,8 @@
 									<td data-label="Email">
 										<span><?php echo $value['email'] ?></span>
 									</td>
-									<td data-label="Current Balance">€<?php echo number_format($value['current_bal']) ?></td>
-									<td data-label="Savings Balance">€<?php echo number_format($value['savings_bal']) ?></td>
+									<td data-label="Current Balance">$<?php echo number_format($value['current_bal']) ?></td>
+									<td data-label="Savings Balance">$<?php echo number_format($value['savings_bal']) ?></td>
 									<td data-label="Status">
 										<?php
 											if($value['status']=='confirmed') echo '<span class="badge badge--success">Confirmed</span>';
