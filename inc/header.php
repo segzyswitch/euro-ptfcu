@@ -141,7 +141,7 @@
     <div class="tp-header-btn">
 
       <!------- GET A QUOTE --------->
-      <a class="tp-btn d-none d-xl-block" href="accounts">
+      <a class="tp-btn d-none d-xl-block" href="accounts/">
         E-BANKING <i class="fa fa-lock"></i>
       </a>
       <!-------- / GET A QUOTE ------>
