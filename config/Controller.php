@@ -15,7 +15,7 @@ class Controller
     $this->db_server = 'localhost';
     // $this->db_username = 'root';
     // $this->db_password = '';
-    // $this->db_name = 'euro_ptfcu';
+    // $this->db_name = 'reichsburg';
 
     $this->db_username = 'velloxaw_default';
     $this->db_password = 'Primestar1$';

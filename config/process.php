@@ -6,7 +6,6 @@ $conn = $Controller->conn;
 if ( isset($_SESSION["reichs_account_id"]) ) {
   $user_info = $Controller->User();
   $user_id = $_SESSION["reichs_account_id"];
-  $wallet_bal = $user_info['wallet_bal'];
 }
 
 // GENERATE UNIQUE ID
@@ -200,7 +199,7 @@ if ( isset($_POST['upload_photo']) ) {
 }
 // change password
 if ( isset($_POST["change_password"]) ) {
-  $old_password = filter_var($_POST["old_password"], FILTER_SANITIZE_SPECIAL_CHARS);
+  $old_password = $_POST["password"];
   $new_password = filter_var($_POST["new_password"], FILTER_SANITIZE_SPECIAL_CHARS);
   $confirm_password = filter_var($_POST["confirm_password"], FILTER_SANITIZE_SPECIAL_CHARS);
   // Hash new password
@@ -214,7 +213,7 @@ if ( isset($_POST["change_password"]) ) {
   $confirminfo->execute();
   $userData = $confirminfo->fetch();
 
-  if ( password_verify($old_password, $userData["password"]) ) {
+  if ( !password_verify($old_password, $userData["password"]) ) {
     echo "Incorrect old pasword, check and try again!";
     return false;
   }
@@ -352,72 +351,6 @@ if ( isset($_POST['make_deposit']) ) {
     }
   }else {
     echo "Upload failed, check connection and try again";
-  }
-}
-
-// invest_now
-if ( isset($_POST["invest_now"]) ) {
-  $plan_id = $_POST['plan_id'];
-  $amount = $_POST['amount'];
-  // wallet balance after removing amount
-  $new_balance = $wallet_bal - $amount;
-  // Generate 13 char invoice
-  $invoice = strtoupper(generateUniqueId(12));
-  // Plan details
-  $plan_info = $Controller->singlePlan($plan_id);
-  $plan_name = $plan_info['name'];
-  $plan_min = $plan_info['min_limit'];
-  $plan_max = $plan_info['max_limit'];
-  $interval = $plan_info['duration'];
-  $interest = $amount * $plan_info['interest'] / 100;
-  $profit = $interest * $amount;
-  $total_return = $amount + $profit;
-  $start_date = date('Y-m-d H:i');
-  $end_date = date('Y-m-d H:i', strtotime($start_date . ' + '.$interval.' days'));
-
-  // Check wallet balance
-  if ( $amount > $user_info['wallet_bal'] ) {
-    echo "Insufficient balance, fund your wallet and try again!";
-    return false;
-  }
-  // Check min trade
-  if ( $amount < $plan_info['min_limit'] ) {
-    echo "Minimum amount for ".$plan_name." plan is $".$plan_min.", choose a different plan!";
-    return false;
-  }
-  // Check max trade
-  if ( $amount > $plan_info['max_limit'] ) {
-    echo "Maximun amount for ".$plan_name." plan is $".$plan_min.", choose a different plan!";
-    return false;
-  }
-
-  $details = "Invested to $".$plan_name." plan";
-
-  $trade = "INSERT INTO trades(user_id, plan_hash, plan_id, plan_name, amount, period,
-    interest, profit, returns, start_date, end_date)
-    VALUES('$user_id', '$invoice', '$plan_id', '$plan_name', '$amount', '$interval',
-    '$daily_interest', '$profit', '$total_return', '$start_date', '$end_date')
-  ";
-  $transact = "INSERT INTO transactions(user_id, type, invoice, amount,
-    initial_bal, source, proof, send_to, details, status)
-    VALUES('$user_id', 'trade', '$invoice', '$amount',
-    '$wallet_bal', 'Wallet balance', '-', 'trade', '$details', 'success')
-  ";
-  $debit_user = "UPDATE users SET wallet_bal = '$new_balance' WHERE id = '$user_id'";
-
-  $query1 = $conn->prepare($trade);
-  $query2 = $conn->prepare($transact);
-  $query3 = $conn->prepare($debit_user);
-
-  try {
-    $query1->execute();
-    $query2->execute();
-    $query3->execute();
-
-    echo "Trade successful, a total of $".number_format($total_return)." will be added to your wallet balance on ".$end_date;
-    return true;
-  } catch (PDOException $e) {
-    echo $e->getMessage();
   }
 }
 

@@ -123,7 +123,7 @@ require '../config/session.php';
 									<h6 class="mb-1">Password</h6>
 									<p class="text-muted small mb-0">Last changed 30 days ago</p>
 								</div>
-								<button class="btn btn-outline-primary btn-sm">Change Password</button>
+								<a href="#passwordModal" data-bs-toggle="modal" class="btn btn-outline-primary btn-sm">Change Password</a>
 							</div>
 							<div class="d-flex justify-content-between align-items-center py-3 border-bottom">
 								<div>
@@ -131,7 +131,7 @@ require '../config/session.php';
 									<p class="text-muted small mb-0">Add an extra layer of security</p>
 								</div>
 								<div class="form-check form-switch">
-									<input class="form-check-input" type="checkbox" id="twoFactorAuth" checked>
+									<input class="form-check-input" type="checkbox" id="twoFactorAuth" />
 								</div>
 							</div>
 							<div class="d-flex justify-content-between align-items-center py-3">
@@ -140,7 +140,7 @@ require '../config/session.php';
 									<p class="text-muted small mb-0">Get notified of new login attempts</p>
 								</div>
 								<div class="form-check form-switch">
-									<input class="form-check-input" type="checkbox" id="loginNotif" checked>
+									<input class="form-check-input" type="checkbox" id="loginNotif" />
 								</div>
 							</div>
 						</div>
@@ -158,7 +158,7 @@ require '../config/session.php';
 									<p class="text-muted small mb-0">Receive updates via email</p>
 								</div>
 								<div class="form-check form-switch">
-									<input class="form-check-input" type="checkbox" id="emailNotif" checked>
+									<input class="form-check-input" type="checkbox" id="emailNotif" />
 								</div>
 							</div>
 							<div class="d-flex justify-content-between align-items-center py-3 border-bottom">
@@ -167,7 +167,7 @@ require '../config/session.php';
 									<p class="text-muted small mb-0">Get notified of all transactions</p>
 								</div>
 								<div class="form-check form-switch">
-									<input class="form-check-input" type="checkbox" id="transNotif" checked>
+									<input class="form-check-input" type="checkbox" id="transNotif" />
 								</div>
 							</div>
 							<div class="d-flex justify-content-between align-items-center py-3">
@@ -256,12 +256,82 @@ require '../config/session.php';
 			</div>
 		</div>
 	</div>
+	
+		<!-- PasswordModal -->
+	<div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="passwordModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<form id="passwordForm" method="POST" action="#" class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="passwordModalLabel"><i class="bi bi-lock"></i> Change password</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body text-start">
+					<div class="form-group mb-4">
+						<label for="new-password" class="form-label mb-1">New password</label>
+						<input type="password" class="form-control" name="new_password" id="new-password" placeholder="" required />
+					</div>
+					<div class="form-group mb-4">
+						<label for="retype-password" class="form-label mb-1">Retype password</label>
+						<input type="password" class="form-control" name="confirm_password" id="retype-password" placeholder="" required />
+					</div>
+					<div class="form-group mb-4">
+						<label for="old-password" class="form-label mb-1">Enter old password</label>
+						<input type="password" class="form-control" name="password" id="old-password" placeholder="" required />
+					</div>
+				</div>
+				<div class="modal-footer">
+					<input type="hidden" name="change_password" value="nwuisncuinjg__893f_8239uj8949r889" />
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="submit" class="btn bg-primary text-white submit-btn">Change password</button>
+				</div>
+			</form>
+		</div>
+	</div>
 
 	<!-- Mobile Bottom Navigation -->
 	<?php include 'inc/mobile-menu.php'; ?>
 
 	<script src="assets/global/js/jquery.min.js"></script>
 	<script src="assets/vendor/mckenziearts/laravel-notify/js/notify.js"></script>
+	<script>
+		$(document).ready(function(){
+			// passwordForm
+			$("#passwordForm").on('submit', function(ev){
+				ev.preventDefault();
+
+				$.ajax({
+					url: "../config/process.php",
+					type: "POST",
+					data: new FormData(this),
+					cache: false,
+					contentType: false,
+					processData: false,
+					beforeSend: function() {
+						$("#passwordForm .submit-btn").html("please wait <i class='spinner-border spinner-border-sm'></i>");
+						$("#passwordForm .submit-btn").addClass("disabled");
+					},
+					success: function(data) {
+						$("#passwordForm .submit-btn").html("Continue <i class='bi bi-arrow-right'></i>");
+						$("#passwordForm .submit-btn").removeClass("disabled");
+						if ( data.search('success') !== -1 ) {
+							notifySuccess(data);
+							$("#passwordForm input").val('');
+							$('.modal').modal('hide');
+						}else {
+							notifyWarning(data);
+						}
+						console.log(data);
+					},
+					error: function(error) {
+						$("#passwordForm .submit-btn").html("Continue <i class='bi bi-arrow-right'></i>");
+						$("#passwordForm .submit-btn").removeClass("disabled");
+						console.log(error);
+						notifyWarning('An error occured, check your connection and try again');
+					}
+				});
+			});
+		});
+	</script>
 	<script src="../js/forms.js"></script>
 	<script src="assets/js/theme.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
